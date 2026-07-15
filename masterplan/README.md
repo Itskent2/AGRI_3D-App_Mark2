@@ -677,19 +677,57 @@ GRBL provides two independent, complementary crash-prevention systems. Both must
 
 #### Soft Limits (`$20 = 1`) — First Line of Defense
 
-**What it is**: A pure software check. Before executing any move, GRBL calculates whether the target position would fall outside the axis travel bounds `[0mm ... $13X mm]`. If it would, GRBL **refuses the move entirely** — the motor never turns.
+**What it is**: A pure software check. Before executing any move, GRBL checks whether the target position would fall outside the axis travel bounds. If it would, GRBL **refuses the move entirely** — the motor never turns.
 
 **When it fires**: Before motion starts, during command planning.
 
 **What the operator sees**: `ALARM:2 (Soft limit)` in the status. Nano enters ALARM state. Requires `$X` unlock to resume.
 
-**Example**:
-```
-Soft limit max travel: $130 = 1200mm (X axis)
+**AGRI3D Custom Soft Limit Bounds (Option A — Firmware Override):**
 
-G0 X-5       → GRBL checks: -5 < 0 → ALARM:2, move rejected, no motion
-G0 X1250     → GRBL checks: 1250 > 1200 → ALARM:2, move rejected, no motion
-G0 X600      → GRBL checks: 0 ≤ 600 ≤ 1200 → ✅ allowed, move executes
+GRBL's default soft limit bounds are `[0 ... $13X]` — this allows commanding all the way to the switch (0mm), defeating the purpose of the 5mm pull-off. Our GRBL-AGRI3D fork overrides the soft limit check in `limits.c` to enforce a `SOFT_LIMIT_BUFFER_MM` buffer on both ends of every axis:
+
+```
+  [switch]──5mm──[SOFT MIN]──────────────────[SOFT MAX]──5mm──[switch]
+     0mm       5mm                              $13X-5mm      $13X mm
+```
+
+So with `$130 = 1200mm` and `SOFT_LIMIT_BUFFER_MM = 5.0f`:
+- Soft min = 5mm (cannot command into pull-off zone)
+- Soft max = 1195mm (same buffer at far end)
+
+The custom check in `limits.c` (replaces GRBL's standard soft limit check):
+
+```c
+// Time Complexity: O(N_AXIS) -- fixed 3 axes, effectively O(1)
+// Space Complexity: O(1) -- no heap allocation, stack comparisons only
+//
+// Enforces [SOFT_LIMIT_BUFFER_MM ... max_travel - SOFT_LIMIT_BUFFER_MM]
+// on every axis. SOFT_LIMIT_BUFFER_MM must equal HOMING_PULLOFF so
+// the pull-off zone is never commandable during normal operation.
+bool agri3d_check_soft_limits(float* target) {
+    for (uint8_t axis = 0; axis < N_AXIS; axis++) {
+        float min_bound = SOFT_LIMIT_BUFFER_MM;
+        float max_bound = settings.max_travel[axis] - SOFT_LIMIT_BUFFER_MM;
+        if (target[axis] < min_bound || target[axis] > max_bound) {
+            return true;  // soft limit violation
+        }
+    }
+    return false;
+}
+```
+
+In `machine_config.h`:
+```c
+// MUST equal HOMING_PULLOFF -- keeps pull-off zone and soft limit buffer in sync
+#define SOFT_LIMIT_BUFFER_MM   5.0f
+```
+
+**Example with custom bounds** (`$130 = 1200mm`, buffer = 5mm):
+```
+G0 X3        → GRBL checks: 3 < 5 (min bound) → ALARM:2, move rejected
+G0 X1197     → GRBL checks: 1197 > 1195 (max bound) → ALARM:2, move rejected
+G0 X600      → GRBL checks: 5 ≤ 600 ≤ 1195 → ✅ allowed, move executes
 ```
 
 **Requirement**: Homing must have been completed first. Soft limits use the machine position counter — if homing was never done, the counter is meaningless and soft limits cannot protect you.
@@ -754,19 +792,22 @@ The Nano reports alarm codes over UART that the ESP32 must parse and map to dist
 // Space Complexity: O(1)
 
 #define HOMING_PULLOFF          5.0f   // $27 -- 5mm back-off after homing
-#define ENABLE_SOFT_LIMITS      1      // $20 -- reject out-of-bounds commands
+#define SOFT_LIMIT_BUFFER_MM    5.0f   // Must equal HOMING_PULLOFF -- enforced in agri3d_check_soft_limits()
+#define ENABLE_SOFT_LIMITS      1      // $20 -- enable GRBL soft limit flag (our custom check overrides bounds)
 #define ENABLE_HARD_LIMITS      1      // $21 -- halt on physical switch contact
 #define ENABLE_HOMING_CYCLE     1      // $22 -- require homing on power-on
 #define LIMIT_PINS_INVERT       0      // $5  -- NC switches, no invert needed
 
-// Soft limit bounds per axis (automatically enforced by GRBL when $20=1):
-// X: [0mm ... MAX_TRAVEL_X]
-// Y: [0mm ... MAX_TRAVEL_Y]
-// Z: [0mm ... MAX_TRAVEL_Z]
-// The switch (0mm) is the hard wall. The pull-off (5mm) is where
-// normal operation starts. Soft limits prevent commanding below 0.
-// Hard limits catch any physical contact with the switch at 0.
+// Custom soft limit bounds per axis (enforced by agri3d_check_soft_limits() in limits.c):
+// X: [SOFT_LIMIT_BUFFER_MM ... MAX_TRAVEL_X - SOFT_LIMIT_BUFFER_MM]  i.e. [5mm ... 1195mm]
+// Y: [SOFT_LIMIT_BUFFER_MM ... MAX_TRAVEL_Y - SOFT_LIMIT_BUFFER_MM]  i.e. [5mm ...  595mm]
+// Z: [SOFT_LIMIT_BUFFER_MM ... MAX_TRAVEL_Z - SOFT_LIMIT_BUFFER_MM]  i.e. [5mm ...  145mm]
+//
+// The pull-off zone [0 ... 5mm] and [max-5mm ... max] are NEVER commandable.
+// Hard limits remain as the physical backstop if soft limits are bypassed.
 ```
 
 > **Important**: After any `ALARM:1` (hard limit crash), the machine position is unreliable. The ESP32 must set `head_is_down = true` (conservative default) and require a full re-home before resuming any operation. Never trust `MPos` after a hard limit alarm without re-homing.
+
+> **Keep in sync**: If `HOMING_PULLOFF` is ever changed, `SOFT_LIMIT_BUFFER_MM` must be updated to match. They are intentionally separate constants so a future machine revision can set them independently if needed, but they should always be equal on this hardware.
 
