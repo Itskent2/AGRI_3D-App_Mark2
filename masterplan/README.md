@@ -497,3 +497,276 @@ Add to `machine_config.h`:
 ```
 
 And ensure `$10=1` (position included in status report) is applied during boot config write.
+
+---
+
+## 11. Timeout & Disconnect Recovery
+
+### GRBL Planner Buffer Size: `BLOCK_BUFFER_SIZE 2`
+
+In `GRBL-AGRI3D/src/config.h`, set:
+
+```c
+// Time Complexity: N/A (compile-time constant)
+// Space Complexity: O(1) -- 2 planner blocks allocated in SRAM
+#define BLOCK_BUFFER_SIZE  2
+```
+
+**Why 2, not the default 16:**
+
+With `BLOCK_BUFFER_SIZE 16`, the Nano can pre-plan 16 moves before sending `ok`. If the operator hits STOP, those 16 moves are already committed and will drain before the machine halts. For an agricultural gantry, this creates an unacceptable stop lag.
+
+With `BLOCK_BUFFER_SIZE 2`:
+- The ESP32 gets `ok` after every 1-2 moves (not 16)
+- Feed Hold takes effect within at most 2 moves (~a few hundred ms at most)
+- The ESP32 always knows what the Nano is executing right now
+- Junction velocity smoothing is slightly reduced but irrelevant at agricultural traverse speeds
+
+The ESP32 G-code queue uses this pattern:
+
+```
+ESP32 sends command 1 → waits for ok
+ESP32 sends command 2 → waits for ok  (2 in buffer, Nano blocks here)
+ok received → ESP32 sends command 3 → and so on
+```
+
+This is called the "Simple Serial Streaming" pattern. With `BLOCK_BUFFER_SIZE 2`, it is the only safe pattern to use.
+
+---
+
+### Timeout Scenarios
+
+#### Scenario 1 — `?` Poll Timeout (Nano went silent)
+
+```
+ESP32 sends ?
+├── Response arrives within 200ms → parse, clear status_poll_pending ✅
+└── No response after 200ms      → increment missed_polls counter
+      ├── missed_polls < 4  → retry at next poll interval
+      └── missed_polls >= 4 → ENTER ALARM_RECOVERY
+                              clear G-code send queue
+                              flush UART RX/TX buffers
+                              send CMD_REJECTED + ALARM_NANO_SILENT to Flutter
+```
+
+The 200ms timeout gives 40× margin over GRBL's typical ~5ms response latency.
+
+#### Scenario 2 — G-code Command Timeout (No `ok` received)
+
+A fixed timeout cannot be used — a long traverse move legitimately takes 30+ seconds. Instead:
+
+> **The command watchdog resets on ANY incoming UART byte.**
+
+As long as the Nano is alive, it is sending status lines (auto-report or `?` responses). If the UART goes completely silent for `4 × current_poll_interval_ms`, the Nano is considered dead.
+
+```c
+// Time Complexity: O(1) -- single timestamp comparison per RX byte
+// Space Complexity: O(1)
+static uint32_t last_uart_rx_ms = 0;
+
+void uart_rx_isr(void) {
+    last_uart_rx_ms = xTaskGetTickCount();  // reset on ANY byte received
+}
+
+void serial_watchdog_check(void) {
+    uint32_t silence_ms = xTaskGetTickCount() - last_uart_rx_ms;
+    uint32_t threshold  = 4 * grbl_get_poll_interval_ms(current_nano_state);
+    if (silence_ms > threshold) {
+        enter_alarm_recovery(ALARM_UART_SILENCE);
+    }
+}
+```
+
+#### Scenario 3 — WebSocket Ping-Pong Timeout (Flutter disappeared)
+
+```
+ESP32 pings Flutter every 2 seconds
+├── Pong received             → reset counter ✅
+└── No pong (10 consecutive) → force close WebSocket
+                               cancel: camera JPEG stream
+                               cancel: outgoing WebSocket queue
+                               keep:   autonomous routine (if running)
+                               keep:   UART polling / Nano watchdog
+                               state:  waiting for new client
+```
+
+An autonomous overnight scan must NOT be aborted because the phone screen turned off.
+
+#### Scenario 4 — Nano Crash / Unexpected Reset
+
+GRBL always sends `Grbl X.Xx ['$' for help]` when it boots. The ESP32 must watch for this string on UART RX during normal operation:
+
+```c
+// Time Complexity: O(n) -- n = length of received line (~30 chars max)
+// Space Complexity: O(1)
+void grbl_on_line_received(const char* line) {
+    if (strncmp(line, "Grbl ", 5) == 0) {
+        // Nano just rebooted unexpectedly
+        enter_alarm_recovery(ALARM_NANO_RESET);
+        grbl_queue_clear();           // all pending commands are invalid
+        uart_flush_buffers();         // clear ghost bytes
+        grbl_write_machine_config();  // re-apply $ settings
+        // Require homing before any operation resumes
+        notify_flutter(EVENT_NANO_RESET);
+        return;
+    }
+    // ... normal parsing
+}
+```
+
+After an unexpected Nano reset, the machine position is completely unknown. Homing is **mandatory** before resuming any operation.
+
+---
+
+### Disconnect Recovery Flow Summary
+
+```
+Flutter disconnects (pong timeout x10)
+  → Close WebSocket socket
+  → Stop camera stream
+  → Keep Nano polling alive
+  → Keep autonomous routine running (if active)
+  → Wait for new client connection
+
+Nano silent (UART watchdog)
+  → Enter ALARM_RECOVERY
+  → Flush UART buffers
+  → Clear G-code queue
+  → Notify Flutter: CMD_REJECTED + reason
+  → Wait for operator UNLOCK + HOME
+
+Nano unexpected reset (startup string detected)
+  → Enter ALARM_RECOVERY
+  → Re-apply $ machine settings
+  → Require re-home before resuming
+  → Notify Flutter: EVENT_NANO_RESET
+
+All recovery paths require:
+  1. Operator issues UNLOCK ($X) via Flutter
+  2. Operator issues HOME ($H) via Flutter
+  3. ESP32 transitions from ALARM_RECOVERY → IDLE
+  4. Normal operation resumes
+```
+
+---
+
+## 12. Limit Switches, Homing & Crash Detection
+
+### How Homing Establishes the Coordinate Origin
+
+When `$H` is issued, each axis moves toward its home switch. The moment the switch triggers, GRBL stamps that exact position as **machine coordinate 0** on that axis. It then backs off by `$27` (pull-off distance = **5mm** in our machine):
+
+```
+ [LIMIT SWITCH]──────5mm──────[machine rests here]───────────────[max travel]
+      MPos = 0             MPos = 5.000 (after homing)            MPos = $13X
+      ↑ danger zone starts here                                    ↑ danger zone starts here
+```
+
+After `$H` completes, the status reads `MPos: 5.000, 5.000, 5.000` — the machine is sitting 5mm away from each switch, with the origin (0) being the switch contact point itself.
+
+In `machine_config.h`:
+```c
+#define HOMING_PULLOFF   5.0f   // $27 -- back off 5mm from switch after homing
+```
+
+---
+
+### Soft Limits vs Hard Limits — The Full Explanation
+
+GRBL provides two independent, complementary crash-prevention systems. Both must be enabled. They are **not alternatives** — they are **defense layers**.
+
+#### Soft Limits (`$20 = 1`) — First Line of Defense
+
+**What it is**: A pure software check. Before executing any move, GRBL calculates whether the target position would fall outside the axis travel bounds `[0mm ... $13X mm]`. If it would, GRBL **refuses the move entirely** — the motor never turns.
+
+**When it fires**: Before motion starts, during command planning.
+
+**What the operator sees**: `ALARM:2 (Soft limit)` in the status. Nano enters ALARM state. Requires `$X` unlock to resume.
+
+**Example**:
+```
+Soft limit max travel: $130 = 1200mm (X axis)
+
+G0 X-5       → GRBL checks: -5 < 0 → ALARM:2, move rejected, no motion
+G0 X1250     → GRBL checks: 1250 > 1200 → ALARM:2, move rejected, no motion
+G0 X600      → GRBL checks: 0 ≤ 600 ≤ 1200 → ✅ allowed, move executes
+```
+
+**Requirement**: Homing must have been completed first. Soft limits use the machine position counter — if homing was never done, the counter is meaningless and soft limits cannot protect you.
+
+#### Hard Limits (`$21 = 1`) — Last Line of Defense
+
+**What it is**: A hardware interrupt. An ISR is attached to each limit switch pin. If the pin changes state (switch triggers) during normal operation — not during homing — GRBL fires the ISR, **stops all stepper pulses atomically**, and enters ALARM state immediately.
+
+**When it fires**: The moment a switch is physically triggered during motion.
+
+**What the operator sees**: `ALARM:1 (Hard limit)`. Machine halts. Position is considered unreliable — re-home required.
+
+**Example**:
+```
+Belt slips during G0 X600 → machine drifts 5mm extra → hits switch at MPos ≈ 0
+→ Hard limit ISR fires (microseconds)
+→ All steppers stopped instantly
+→ ALARM:1 reported over UART
+→ ESP32 enters ALARM_RECOVERY
+→ Flutter shows CRASH DETECTED banner
+→ Operator must physically inspect machine, then UNLOCK + re-HOME
+```
+
+---
+
+### Why You Need Both Running Simultaneously
+
+| Scenario | Soft Limit | Hard Limit |
+|---|---|---|
+| Software bug commands G0 X-50 | ✅ Caught before motion | Not needed |
+| Belt slip causes uncounted drift | ❌ Doesn't know about drift | ✅ Catches physical contact |
+| Power glitch resets position counter | ❌ Counter is wrong | ✅ Physical switch still works |
+| Normal operation within bounds | Allows move | Not triggered |
+
+**Rule**: `$20=1` AND `$21=1` must always be set together. Never disable either in production.
+
+---
+
+### How the ESP32 Distinguishes the Two Alarms
+
+The Nano reports alarm codes over UART that the ESP32 must parse and map to distinct recovery flows:
+
+| GRBL Alarm Code | Meaning | ESP32 Recovery Action |
+|---|---|---|
+| `ALARM:1` | Hard limit triggered (physical crash) | ALARM_RECOVERY + notify Flutter CRASH |
+| `ALARM:2` | Soft limit violation (bad command) | ALARM_RECOVERY + notify Flutter SOFT_LIMIT |
+| `ALARM:3` | Abort during cycle | ALARM_RECOVERY + notify Flutter ABORT |
+| `ALARM:8` | Homing failed (switch not found) | ALARM_RECOVERY + notify Flutter HOME_FAIL |
+| `ALARM:9` | Homing failed (pull-off failed) | ALARM_RECOVERY + notify Flutter HOME_FAIL |
+
+**Key difference in response**:
+- `ALARM:1` (hard limit / crash): Position is definitely wrong. **Mandatory re-home** before any operation. Log the event.
+- `ALARM:2` (soft limit): Position counter is still valid. `$X` unlock and the operator can resume without re-homing if they are confident.
+
+---
+
+### Our Implementation Summary (Mark 2 Config)
+
+```c
+// machine_config.h -- Limit & Homing Configuration
+// Time Complexity: N/A (compile-time constants)
+// Space Complexity: O(1)
+
+#define HOMING_PULLOFF          5.0f   // $27 -- 5mm back-off after homing
+#define ENABLE_SOFT_LIMITS      1      // $20 -- reject out-of-bounds commands
+#define ENABLE_HARD_LIMITS      1      // $21 -- halt on physical switch contact
+#define ENABLE_HOMING_CYCLE     1      // $22 -- require homing on power-on
+#define LIMIT_PINS_INVERT       0      // $5  -- NC switches, no invert needed
+
+// Soft limit bounds per axis (automatically enforced by GRBL when $20=1):
+// X: [0mm ... MAX_TRAVEL_X]
+// Y: [0mm ... MAX_TRAVEL_Y]
+// Z: [0mm ... MAX_TRAVEL_Z]
+// The switch (0mm) is the hard wall. The pull-off (5mm) is where
+// normal operation starts. Soft limits prevent commanding below 0.
+// Hard limits catch any physical contact with the switch at 0.
+```
+
+> **Important**: After any `ALARM:1` (hard limit crash), the machine position is unreliable. The ESP32 must set `head_is_down = true` (conservative default) and require a full re-home before resuming any operation. Never trust `MPos` after a hard limit alarm without re-homing.
+
