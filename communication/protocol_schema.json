@@ -1,0 +1,95 @@
+{
+  "enums": {
+    "WifiState": {
+      "description": "Indicates ESP32 connection status to the local station or Access Point.",
+      "values": ["DISCONNECTED", "CONNECTING", "CONNECTED"]
+    },
+    "NanoState": {
+      "description": "Indicates communication status between ESP32 and Arduino Nano.",
+      "values": ["UNKNOWN", "CONNECTED", "UNRESPONSIVE"]
+    },
+    "GrblState": {
+      "description": "Current state reported by the GRBL motion engine.",
+      "values": ["UNKNOWN", "IDLE", "RUN", "JOG", "HOME", "HOLD", "ALARM", "CHECK", "DOOR"]
+    },
+    "OperationState": {
+      "description": "Overall operational state machine for autonomous sweeps and tool runs.",
+      "values": [
+        "IDLE",
+        "HOMING",
+        "SD_RUNNING",
+        "FERTILIZING",
+        "SCANNING",
+        "UPLOADING",
+        "AI_WEEDING",
+        "NPK_DIP",
+        "AUTONOMOUS",
+        "RAIN_PAUSED",
+        "ALARM_RECOVERY"
+      ]
+    },
+    "EnvironmentState": {
+      "description": "Weather-gating state based on local ambient and analog rain sensors.",
+      "values": ["CLEAR", "RAIN_SENSOR", "WEATHER_GATED", "RAIN_AND_WEATHER"]
+    }
+  },
+  "messages": {
+    "StateUpdate": {
+      "id": 1,
+      "description": "Broadcasts complete system status snapshot at regular intervals or state changes.",
+      "fields": [
+        {"key": 0, "name": "wifi", "type": "uint8", "description": "WifiState enum index"},
+        {"key": 1, "name": "nano", "type": "uint8", "description": "NanoState enum index"},
+        {"key": 2, "name": "grbl", "type": "uint8", "description": "GrblState enum index"},
+        {"key": 3, "name": "operation", "type": "uint8", "description": "OperationState enum index"},
+        {"key": 4, "name": "environment", "type": "uint8", "description": "EnvironmentState enum index"},
+        {"key": 5, "name": "flags", "type": "uint8", "description": "Bitmask of active boolean flags (e.g. streaming, scan ready)"},
+        {"key": 6, "name": "x", "type": "float", "description": "Current gantry X position in mm"},
+        {"key": 7, "name": "y", "type": "float", "description": "Current gantry Y position in mm"},
+        {"key": 8, "name": "z", "type": "float", "description": "Current gantry Z position in mm"}
+      ]
+    },
+    "PositionUpdate": {
+      "id": 2,
+      "description": "Lightweight, high-frequency position-only update sent during active gantry motion.",
+      "fields": [
+        {"key": 0, "name": "x", "type": "float", "description": "Current gantry X position in mm"},
+        {"key": 1, "name": "y", "type": "float", "description": "Current gantry Y position in mm"},
+        {"key": 2, "name": "z", "type": "float", "description": "Current gantry Z position in mm"}
+      ]
+    },
+    "NpkReading": {
+      "id": 3,
+      "description": "Single soil NPK and atmospheric telemetry reading.",
+      "fields": [
+        {"key": 0, "name": "timestamp", "type": "uint32", "description": "Unix epoch seconds"},
+        {"key": 1, "name": "x", "type": "float", "description": "X coordinate of soil dip in mm"},
+        {"key": 2, "name": "y", "type": "float", "description": "Y coordinate of soil dip in mm"},
+        {"key": 3, "name": "n", "type": "int16", "description": "Nitrogen value scaled by 10 (mg/kg)"},
+        {"key": 4, "name": "p", "type": "int16", "description": "Phosphorus value scaled by 10 (mg/kg)"},
+        {"key": 5, "name": "k", "type": "int16", "description": "Potassium value scaled by 10 (mg/kg)"},
+        {"key": 6, "name": "moisture", "type": "int16", "description": "Soil moisture scaled by 10 (%)"},
+        {"key": 7, "name": "ec", "type": "int16", "description": "Electrical conductivity (µS/cm)"},
+        {"key": 8, "name": "ph", "type": "int16", "description": "Soil pH scaled by 100"},
+        {"key": 9, "name": "temp", "type": "int16", "description": "Soil temperature scaled by 10 (°C)"},
+        {"key": 10, "name": "gridX", "type": "uint8", "description": "Heatmap column coordinate index"},
+        {"key": 11, "name": "gridY", "type": "uint8", "description": "Heatmap row coordinate index"}
+      ]
+    },
+    "CmdPing": {
+      "id": 128,
+      "description": "Outbound latency query sent from Flutter to ESP32.",
+      "fields": [
+        {"key": 0, "name": "pingNo", "type": "uint32", "description": "Incrementing ping identifier"}
+      ]
+    },
+    "CmdPong": {
+      "id": 4,
+      "description": "Inbound latency reply sent from ESP32 back to Flutter.",
+      "fields": [
+        {"key": 0, "name": "millisNow", "type": "uint32", "description": "ESP32 current system millis()"},
+        {"key": 1, "name": "pingNo", "type": "uint32", "description": "Echoed ping identifier"}
+      ]
+    }
+  }
+}
