@@ -330,6 +330,8 @@ if (sys.state == STATE_IDLE) { ... }
 | CRITICAL   | Boot default: `head_is_down = true` until homing                    |
 | CRITICAL   | ESP32 operation state blocker table enforced                         |
 | CRITICAL   | Flutter connection state machine (no zombie sockets)                 |
+| HIGH       | Adaptive `?` polling with one-in-flight rule (prevent UART flooding)|
+| HIGH       | Position cache + fixed-rate WebSocket push (decouple UART from UI)  |
 | HIGH       | `machine_config.h` single source of truth                           |
 | HIGH       | Auto-write EEPROM on boot with version check                        |
 | HIGH       | NC limit switches only -- rewire any NO switches                    |
@@ -343,3 +345,155 @@ if (sys.state == STATE_IDLE) { ... }
 | LOW        | Big-O documentation sweep                                            |
 | LOW        | Flutter outdoor UI polish (dark mode, 56dp touch targets)           |
 
+---
+
+## 10. Real-Time Position Telemetry Protocol
+
+### The Problem (Mark 1)
+
+In Mark 1, the ESP32 polled the Nano with `?` at a fixed rate regardless of machine state and forwarded every response directly to Flutter. This caused two failure modes:
+
+1. **UART flooding**: Polling faster than the Nano could respond caused the UART RX buffer to overflow, dropping status bytes mid-parse and producing corrupt position readings.
+2. **WebSocket flooding**: Every UART poll triggered a WebSocket push, so rapid polling also congested the Wi-Fi link to Flutter -- especially during JPEG streaming.
+
+### Root Cause
+
+The ESP32 coupled two things that must be **completely decoupled**:
+
+- **How often it polls the Nano** (UART rate -- hardware-constrained)
+- **How often it pushes position to Flutter** (WebSocket rate -- UI-constrained)
+
+When these are the same loop, adding G-code command traffic on top of status polling overflows the serial buffer even at 115200 baud.
+
+---
+
+### The Fix: Three Rules
+
+#### Rule 1 -- One `?` In Flight at a Time
+
+The ESP32 must **never send a second `?`** until the full response to the first has been received and parsed. A single atomic boolean `status_poll_pending` inside `TASK_SERIAL` enforces this:
+
+```c
+// Time Complexity: O(1) -- single flag check per poll tick
+// Space Complexity: O(1) -- one boolean
+static volatile bool status_poll_pending = false;
+
+void grbl_request_status(void) {
+    if (status_poll_pending) return;  // previous response not yet received -- SKIP
+    status_poll_pending = true;
+    uart_write_bytes(UART_NUM_1, "?", 1);
+}
+
+void grbl_on_status_received(const char* status_line) {
+    grbl_parse_status(status_line);  // update position cache
+    status_poll_pending = false;      // allow next poll
+}
+```
+
+> This single rule eliminates the majority of UART flooding. The buffer can only ever hold one unanswered query at a time.
+
+#### Rule 2 -- Adaptive Poll Interval (State-Aware)
+
+The poll rate adapts to the Nano's current state. There is no reason to poll 20x/sec when the machine is stationary.
+
+| Nano State | Poll Interval | Reasoning |
+|---|---|---|
+| `IDLE` | 500 ms | Position is not changing |
+| `HOLD` | 500 ms | Machine is paused |
+| `ALARM` | 1000 ms | Just confirming it is alive |
+| `HOME` | 100 ms | Homing is controlled and predictable |
+| `RUN` | 50 ms | Active coordinated motion |
+| `JOG` | 50 ms | Operator-driven, needs responsiveness |
+
+```c
+// Time Complexity: O(1) -- switch on enum value
+// Space Complexity: O(1)
+uint32_t grbl_get_poll_interval_ms(grbl_state_t state) {
+    switch (state) {
+        case GRBL_STATE_RUN:   return 50;
+        case GRBL_STATE_JOG:   return 50;
+        case GRBL_STATE_HOME:  return 100;
+        case GRBL_STATE_HOLD:  return 500;
+        case GRBL_STATE_ALARM: return 1000;
+        default:               return 500;  // IDLE and unknown
+    }
+}
+```
+
+The FreeRTOS software timer in `TASK_SERIAL` reloads itself with this interval after each successful parse.
+
+#### Rule 3 -- Decouple Flutter Update Rate from UART Poll Rate
+
+The ESP32 maintains a **position cache struct** updated whenever a status response is parsed. A completely separate FreeRTOS timer in `TASK_WS` pushes the cached position to Flutter at a fixed **80ms interval**, independent of when the Nano last responded.
+
+```
+         UART (variable, state-gated)             WebSocket (fixed 80ms)
+Nano ──────────────────────────────── ESP32 ─────────────────────────────── Flutter
+  ?  <──(50ms–1000ms adaptive)──      cache   ────── push every 80ms ──────>   UI
+<State|MPos:x,y,z|TMC:...|RELAYS:...>──> update position_cache
+```
+
+Flutter always receives **smooth, fixed-rate** position updates at 12.5 Hz. The UART side operates at whatever hardware-safe rate the current state allows.
+
+```c
+// Time Complexity: O(1) -- struct copy + fixed-size msgpack serialize
+// Space Complexity: O(1) -- fixed-size output buffer on stack
+typedef struct {
+    float x, y, z;
+    grbl_state_t nano_state;
+    bool head_is_down;
+    uint8_t tmc_status[4];  // driver diagnostic flags per axis
+    bool relay_states[6];
+} agri3d_position_cache_t;
+
+static agri3d_position_cache_t position_cache;
+static SemaphoreHandle_t cache_mutex;
+
+// Called from TASK_SERIAL whenever a status line is parsed
+void grbl_update_cache(float x, float y, float z, grbl_state_t state) {
+    xSemaphoreTake(cache_mutex, portMAX_DELAY);
+    position_cache.x = x;
+    position_cache.y = y;
+    position_cache.z = z;
+    position_cache.nano_state = state;
+    xSemaphoreGive(cache_mutex);
+}
+
+// Called from TASK_WS every 80ms -- reads cache, packs, sends
+void ws_push_position_update(void) {
+    agri3d_position_cache_t snapshot;
+    xSemaphoreTake(cache_mutex, portMAX_DELAY);
+    snapshot = position_cache;  // atomic struct copy under mutex
+    xSemaphoreGive(cache_mutex);
+    // ... serialize snapshot to MessagePack and send to WebSocket client
+}
+```
+
+---
+
+### FreeRTOS Task Ownership
+
+The `cache_mutex`-protected struct is the **only shared resource** between `TASK_SERIAL` and `TASK_WS`. All other inter-task communication uses FreeRTOS queues.
+
+| Task | Owns | Never touches directly |
+|---|---|---|
+| `TASK_SERIAL` | UART RX/TX, `?` polling, cache writes, G-code send queue | WebSocket |
+| `TASK_WS` | WebSocket RX/TX, ping watchdog, 80ms position push timer | UART |
+| `TASK_SENSOR` | Rain, NPK, soil moisture ADC reads | UART, WebSocket |
+| `TASK_AI` | Edge Impulse inference, fuzzy dosing logic | All hardware pins |
+
+---
+
+### GRBL Auto-Report Mode (Optional Enhancement)
+
+GRBL 1.1+ supports automatic real-time status reports during motion. If enabled in the GRBL-AGRI3D fork, the Nano pushes status lines **without** requiring `?` polls during motion -- the ESP32 simply listens. This eliminates all poll traffic during `RUN`/`JOG`/`HOME`; the `?` fallback at 500ms stays active for `IDLE`/`HOLD` as a keepalive.
+
+Add to `machine_config.h`:
+```c
+// Automatic real-time status report interval during motion (ms)
+// 0 = disabled (use ? polling only)
+// 50 = 20Hz auto-report during RUN/JOG/HOME
+#define GRBL_AUTO_REPORT_INTERVAL_MS  50
+```
+
+And ensure `$10=1` (position included in status report) is applied during boot config write.
