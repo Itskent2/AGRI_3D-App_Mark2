@@ -1,0 +1,4748 @@
+{
+  "files": {
+    "config.h": {
+      "name": "config.h",
+      "path": "config.h",
+      "size_bytes": 3287,
+      "lines": 99,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "cpu_map.h": {
+      "name": "cpu_map.h",
+      "path": "cpu_map.h",
+      "size_bytes": 2753,
+      "lines": 77,
+      "includes": []
+    },
+    "defaults.h": {
+      "name": "defaults.h",
+      "path": "defaults.h",
+      "size_bytes": 2088,
+      "lines": 45,
+      "includes": []
+    },
+    "eeprom.c": {
+      "name": "eeprom.c",
+      "path": "eeprom.c",
+      "size_bytes": 4963,
+      "lines": 138,
+      "includes": [
+        "avr/interrupt.h",
+        "avr/io.h"
+      ]
+    },
+    "eeprom.h": {
+      "name": "eeprom.h",
+      "path": "eeprom.h",
+      "size_bytes": 670,
+      "lines": 19,
+      "includes": []
+    },
+    "gcode.c": {
+      "name": "gcode.c",
+      "path": "gcode.c",
+      "size_bytes": 34740,
+      "lines": 903,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "gcode.h": {
+      "name": "gcode.h",
+      "path": "gcode.h",
+      "size_bytes": 6759,
+      "lines": 177,
+      "includes": []
+    },
+    "grbl-agri3d.h": {
+      "name": "grbl-agri3d.h",
+      "path": "grbl-agri3d.h",
+      "size_bytes": 2988,
+      "lines": 102,
+      "includes": [
+        "avr/interrupt.h",
+        "avr/io.h",
+        "avr/pgmspace.h",
+        "avr/wdt.h",
+        "inttypes.h",
+        "math.h",
+        "stdbool.h",
+        "stdint.h",
+        "stdlib.h",
+        "string.h",
+        "util/delay.h",
+        "config.h",
+        "nuts_bolts.h",
+        "settings.h",
+        "system.h",
+        "defaults.h",
+        "cpu_map.h",
+        "planner.h",
+        "relays.h",
+        "eeprom.h",
+        "gcode.h",
+        "limits.h",
+        "motion_control.h",
+        "print.h",
+        "protocol.h",
+        "report.h",
+        "serial.h",
+        "tmc_uart.h",
+        "tmc_config.h",
+        "stepper.h",
+        "jog.h"
+      ]
+    },
+    "jog.c": {
+      "name": "jog.c",
+      "path": "jog.c",
+      "size_bytes": 1804,
+      "lines": 54,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "jog.h": {
+      "name": "jog.h",
+      "path": "jog.h",
+      "size_bytes": 1025,
+      "lines": 34,
+      "includes": [
+        "gcode.h"
+      ]
+    },
+    "limits.c": {
+      "name": "limits.c",
+      "path": "limits.c",
+      "size_bytes": 22470,
+      "lines": 600,
+      "includes": [
+        "grbl-agri3d.h",
+        "avr/wdt.h"
+      ]
+    },
+    "limits.h": {
+      "name": "limits.h",
+      "path": "limits.h",
+      "size_bytes": 565,
+      "lines": 25,
+      "includes": []
+    },
+    "main.c": {
+      "name": "main.c",
+      "path": "main.c",
+      "size_bytes": 4568,
+      "lines": 116,
+      "includes": [
+        "grbl-agri3d.h",
+        "avr/wdt.h"
+      ]
+    },
+    "motion_control.c": {
+      "name": "motion_control.c",
+      "path": "motion_control.c",
+      "size_bytes": 11019,
+      "lines": 273,
+      "includes": [
+        "grbl-agri3d.h",
+        "tmc_config.h",
+        "util/delay.h"
+      ]
+    },
+    "motion_control.h": {
+      "name": "motion_control.h",
+      "path": "motion_control.h",
+      "size_bytes": 2077,
+      "lines": 61,
+      "includes": []
+    },
+    "nuts_bolts.c": {
+      "name": "nuts_bolts.c",
+      "path": "nuts_bolts.c",
+      "size_bytes": 5517,
+      "lines": 194,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "nuts_bolts.h": {
+      "name": "nuts_bolts.h",
+      "path": "nuts_bolts.h",
+      "size_bytes": 3096,
+      "lines": 93,
+      "includes": []
+    },
+    "planner.c": {
+      "name": "planner.c",
+      "path": "planner.c",
+      "size_bytes": 25639,
+      "lines": 563,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "planner.h": {
+      "name": "planner.h",
+      "path": "planner.h",
+      "size_bytes": 7614,
+      "lines": 175,
+      "includes": []
+    },
+    "print.c": {
+      "name": "print.c",
+      "path": "print.c",
+      "size_bytes": 2652,
+      "lines": 130,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "print.h": {
+      "name": "print.h",
+      "path": "print.h",
+      "size_bytes": 898,
+      "lines": 26,
+      "includes": []
+    },
+    "protocol.c": {
+      "name": "protocol.c",
+      "path": "protocol.c",
+      "size_bytes": 31238,
+      "lines": 733,
+      "includes": [
+        "grbl-agri3d.h",
+        "tmc_config.h",
+        "avr/wdt.h"
+      ]
+    },
+    "protocol.h": {
+      "name": "protocol.h",
+      "path": "protocol.h",
+      "size_bytes": 1883,
+      "lines": 51,
+      "includes": []
+    },
+    "relays.c": {
+      "name": "relays.c",
+      "path": "relays.c",
+      "size_bytes": 1410,
+      "lines": 48,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "relays.h": {
+      "name": "relays.h",
+      "path": "relays.h",
+      "size_bytes": 403,
+      "lines": 20,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "report.c": {
+      "name": "report.c",
+      "path": "report.c",
+      "size_bytes": 11483,
+      "lines": 360,
+      "includes": [
+        "grbl-agri3d.h",
+        "tmc_config.h",
+        "eeprom.h"
+      ]
+    },
+    "report.h": {
+      "name": "report.h",
+      "path": "report.h",
+      "size_bytes": 3721,
+      "lines": 111,
+      "includes": []
+    },
+    "serial.c": {
+      "name": "serial.c",
+      "path": "serial.c",
+      "size_bytes": 4505,
+      "lines": 167,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "serial.h": {
+      "name": "serial.h",
+      "path": "serial.h",
+      "size_bytes": 1085,
+      "lines": 38,
+      "includes": [
+        "stdint.h"
+      ]
+    },
+    "settings.c": {
+      "name": "settings.c",
+      "path": "settings.c",
+      "size_bytes": 13749,
+      "lines": 400,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "settings.h": {
+      "name": "settings.h",
+      "path": "settings.h",
+      "size_bytes": 6216,
+      "lines": 161,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "stepper.c": {
+      "name": "stepper.c",
+      "path": "stepper.c",
+      "size_bytes": 50292,
+      "lines": 1126,
+      "includes": [
+        "grbl-agri3d.h",
+        "tmc_config.h"
+      ]
+    },
+    "stepper.h": {
+      "name": "stepper.h",
+      "path": "stepper.h",
+      "size_bytes": 972,
+      "lines": 42,
+      "includes": []
+    },
+    "system.c": {
+      "name": "system.c",
+      "path": "system.c",
+      "size_bytes": 16473,
+      "lines": 478,
+      "includes": [
+        "grbl-agri3d.h",
+        "tmc_config.h",
+        "tmc2209.h",
+        "tmc_uart.h"
+      ]
+    },
+    "system.h": {
+      "name": "system.h",
+      "path": "system.h",
+      "size_bytes": 9509,
+      "lines": 210,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "tmc2209.h": {
+      "name": "tmc2209.h",
+      "path": "tmc2209.h",
+      "size_bytes": 1444,
+      "lines": 47,
+      "includes": [
+        "stdbool.h",
+        "stdint.h"
+      ]
+    },
+    "tmc_config.c": {
+      "name": "tmc_config.c",
+      "path": "tmc_config.c",
+      "size_bytes": 15589,
+      "lines": 408,
+      "includes": [
+        "tmc_config.h",
+        "grbl-agri3d.h",
+        "eeprom.h",
+        "tmc2209.h",
+        "tmc_uart.h",
+        "avr/io.h",
+        "util/delay.h",
+        "settings.h"
+      ]
+    },
+    "tmc_config.h": {
+      "name": "tmc_config.h",
+      "path": "tmc_config.h",
+      "size_bytes": 3503,
+      "lines": 82,
+      "includes": [
+        "stdbool.h",
+        "stdint.h"
+      ]
+    },
+    "tmc_uart.c": {
+      "name": "tmc_uart.c",
+      "path": "tmc_uart.c",
+      "size_bytes": 6791,
+      "lines": 240,
+      "includes": [
+        "tmc_uart.h",
+        "tmc2209.h",
+        "avr/interrupt.h",
+        "avr/io.h",
+        "util/delay.h"
+      ]
+    },
+    "tmc_uart.h": {
+      "name": "tmc_uart.h",
+      "path": "tmc_uart.h",
+      "size_bytes": 1513,
+      "lines": 48,
+      "includes": [
+        "avr/io.h",
+        "stdbool.h",
+        "stdint.h"
+      ]
+    },
+    "examples/grblUpload/grblUpload.ino": {
+      "name": "grblUpload.ino",
+      "path": "examples/grblUpload/grblUpload.ino",
+      "size_bytes": 234,
+      "lines": 12,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "examples/testgrbl/testgrbl.ino": {
+      "name": "testgrbl.ino",
+      "path": "examples/testgrbl/testgrbl.ino",
+      "size_bytes": 2383,
+      "lines": 57,
+      "includes": [
+        "grbl-agri3d.h"
+      ]
+    },
+    "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino": {
+      "name": "TMC2209_17HS8401_Test.ino",
+      "path": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "size_bytes": 3364,
+      "lines": 110,
+      "includes": [
+        "Arduino.h",
+        "grbl-agri3d.h",
+        "tmc2209.h",
+        "tmc_uart.h",
+        "tmc_config.h"
+      ]
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino": {
+      "name": "tmc2209_simulator.ino",
+      "path": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "size_bytes": 8669,
+      "lines": 239,
+      "includes": [
+        "SoftwareSerial.h"
+      ]
+    }
+  },
+  "file_edges": [
+    {
+      "source": "config.h",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "gcode.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "config.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "nuts_bolts.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "settings.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "system.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "defaults.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "cpu_map.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "planner.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "relays.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "eeprom.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "gcode.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "limits.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "motion_control.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "print.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "protocol.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "report.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "serial.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "tmc_uart.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "stepper.h",
+      "type": "includes"
+    },
+    {
+      "source": "grbl-agri3d.h",
+      "target": "jog.h",
+      "type": "includes"
+    },
+    {
+      "source": "jog.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "jog.h",
+      "target": "gcode.h",
+      "type": "includes"
+    },
+    {
+      "source": "limits.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "main.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "motion_control.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "motion_control.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "nuts_bolts.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "planner.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "print.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "protocol.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "protocol.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "relays.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "relays.h",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "report.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "report.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "report.c",
+      "target": "eeprom.h",
+      "type": "includes"
+    },
+    {
+      "source": "serial.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "settings.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "settings.h",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "stepper.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "stepper.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "system.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "system.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "system.c",
+      "target": "tmc2209.h",
+      "type": "includes"
+    },
+    {
+      "source": "system.c",
+      "target": "tmc_uart.h",
+      "type": "includes"
+    },
+    {
+      "source": "system.h",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "tmc_config.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "eeprom.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "tmc2209.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "tmc_uart.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_config.c",
+      "target": "settings.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_uart.c",
+      "target": "tmc_uart.h",
+      "type": "includes"
+    },
+    {
+      "source": "tmc_uart.c",
+      "target": "tmc2209.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/grblUpload/grblUpload.ino",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/testgrbl/testgrbl.ino",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "target": "grbl-agri3d.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "target": "tmc2209.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "target": "tmc_uart.h",
+      "type": "includes"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "target": "tmc_config.h",
+      "type": "includes"
+    }
+  ],
+  "call_edges": [
+    {
+      "source": "eeprom.c::memcpy_to_eeprom_with_checksum",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "eeprom.c::memcpy_from_eeprom_with_checksum",
+      "target": "eeprom.c::eeprom_get_char",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_sync_position",
+      "target": "system.c::system_convert_array_steps_to_mpos",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "jog.c::jog_execute",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "motion_control.c::mc_line",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "motion_control.c::mc_dwell",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "motion_control.c::mc_override_ctrl_update",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "nuts_bolts.c::read_float",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "relays.c::relay_water",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "relays.c::relay_fert",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "relays.c::relay_weeder",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "report.c::report_feedback_message",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "settings.c::settings_write_coord_data",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "settings.c::settings_read_coord_data",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "system.c::system_flag_wco_change",
+      "type": "calls"
+    },
+    {
+      "source": "gcode.c::gc_execute_line",
+      "target": "system.c::system_set_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "jog.c::jog_execute",
+      "target": "motion_control.c::mc_line",
+      "type": "calls"
+    },
+    {
+      "source": "jog.c::jog_execute",
+      "target": "stepper.c::st_wake_up",
+      "type": "calls"
+    },
+    {
+      "source": "jog.c::jog_execute",
+      "target": "stepper.c::st_prep_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "jog.c::jog_execute",
+      "target": "system.c::system_check_travel_limits",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_init",
+      "target": "limits.c::limits_disable",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_get_state",
+      "target": "settings.c::get_limit_pin_mask",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "limits.c::limits_get_state",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "motion_control.c::mc_reset",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "nuts_bolts.c::delay_ms",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "planner.c::plan_buffer_line",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "settings.c::settings_store_global_setting",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "settings.c::get_step_pin_mask",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "stepper.c::st_wake_up",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "stepper.c::st_reset",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "stepper.c::st_prep_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "system.c::system_convert_array_steps_to_mpos",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "system.c::system_clear_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_go_home",
+      "target": "system.c::system_set_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_soft_check",
+      "target": "motion_control.c::mc_reset",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_soft_check",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_soft_check",
+      "target": "system.c::system_check_travel_limits",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_soft_check",
+      "target": "system.c::system_set_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "limits.c::limits_soft_check",
+      "target": "system.c::system_set_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "gcode.c::gc_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "gcode.c::gc_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "limits.c::limits_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "planner.c::plan_reset",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "planner.c::plan_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "protocol.c::protocol_main_loop",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "relays.c::relays_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "report.c::report_init_message",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "serial.c::serial_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "serial.c::serial_reset_read_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "settings.c::settings_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "stepper.c::st_reset",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "stepper.c::stepper_init",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "tmc_config.c::tmc_config_init_all",
+      "type": "calls"
+    },
+    {
+      "source": "main.c::main",
+      "target": "tmc_uart.c::tmc_uart_init",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "limits.c::limits_soft_check",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "motion_control.c::mc_reset",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "planner.c::plan_check_full_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "planner.c::plan_buffer_line",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "protocol.c::protocol_auto_cycle_start",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_line",
+      "target": "system.c::system_set_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_dwell",
+      "target": "nuts_bolts.c::delay_sec",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_dwell",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "gcode.c::gc_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "limits.c::limits_init",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "limits.c::limits_disable",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "limits.c::limits_get_state",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "limits.c::limits_go_home",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "motion_control.c::mc_reset",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "planner.c::plan_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "system.c::system_set_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "tmc_config.c::tmc_stallguard_enable",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_homing_cycle",
+      "target": "tmc_config.c::tmc_stallguard_disable",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "planner.c::plan_buffer_line",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "protocol.c::protocol_exec_rt_system",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "stepper.c::st_wake_up",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "stepper.c::st_parking_setup_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "stepper.c::st_parking_restore_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_parking_motion",
+      "target": "stepper.c::st_prep_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_override_ctrl_update",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_reset",
+      "target": "relays.c::relays_stop_all",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_reset",
+      "target": "stepper.c::st_go_idle",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_reset",
+      "target": "system.c::system_set_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "motion_control.c::mc_reset",
+      "target": "system.c::system_set_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "nuts_bolts.c::delay_sec",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "nuts_bolts.c::delay_sec",
+      "target": "protocol.c::protocol_exec_rt_system",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::planner_recalculate",
+      "target": "planner.c::plan_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::planner_recalculate",
+      "target": "planner.c::plan_prev_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::planner_recalculate",
+      "target": "stepper.c::st_update_plan_block_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_reset",
+      "target": "planner.c::plan_reset_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_discard_current_block",
+      "target": "planner.c::plan_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_get_exec_block_exit_speed_sqr",
+      "target": "planner.c::plan_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_update_velocity_profile_parameters",
+      "target": "planner.c::plan_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_update_velocity_profile_parameters",
+      "target": "planner.c::plan_compute_profile_nominal_speed",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_update_velocity_profile_parameters",
+      "target": "planner.c::plan_compute_profile_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "nuts_bolts.c::convert_delta_vector_to_unit_vector",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "nuts_bolts.c::limit_value_by_axis_maximum",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "planner.c::plan_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "planner.c::planner_recalculate",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "planner.c::plan_compute_profile_nominal_speed",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "planner.c::plan_compute_profile_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_buffer_line",
+      "target": "settings.c::get_direction_pin_mask",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_cycle_reinitialize",
+      "target": "planner.c::planner_recalculate",
+      "type": "calls"
+    },
+    {
+      "source": "planner.c::plan_cycle_reinitialize",
+      "target": "stepper.c::st_update_plan_block_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printString",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printPgmString",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::print_uint8_base10",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::print_uint8_base2_ndigit",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::print_uint32_base10",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printInteger",
+      "target": "print.c::print_uint32_base10",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printInteger",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printFloat",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printFloat_CoordValue",
+      "target": "print.c::printFloat",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::printFloat_RateValue",
+      "target": "print.c::printFloat",
+      "type": "calls"
+    },
+    {
+      "source": "print.c::print_uint32_base16_padded",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "gcode.c::gc_execute_line",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "limits.c::limits_get_state",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "protocol.c::protocol_auto_cycle_start",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "report.c::report_status_message",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "report.c::report_feedback_message",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "report.c::report_echo_line_received",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "serial.c::serial_read",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "system.c::system_execute_startup",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "system.c::system_execute_line",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_main_loop",
+      "target": "tmc_config.c::tmc_config_poll_state",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_buffer_synchronize",
+      "target": "protocol.c::protocol_auto_cycle_start",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_buffer_synchronize",
+      "target": "protocol.c::protocol_execute_realtime",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_auto_cycle_start",
+      "target": "system.c::system_set_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_execute_realtime",
+      "target": "protocol.c::protocol_exec_rt_suspend",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_execute_realtime",
+      "target": "protocol.c::protocol_exec_rt_system",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "gcode.c::gc_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "planner.c::plan_reset",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "planner.c::plan_update_velocity_profile_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "planner.c::plan_sync_position",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "planner.c::plan_cycle_reinitialize",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "report.c::report_alarm_message",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "report.c::report_feedback_message",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "report.c::report_realtime_status",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "stepper.c::st_wake_up",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "stepper.c::st_reset",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "stepper.c::st_update_plan_block_parameters",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "stepper.c::st_prep_buffer",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "system.c::system_clear_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "system.c::system_clear_exec_alarm",
+      "type": "calls"
+    },
+    {
+      "source": "protocol.c::protocol_exec_rt_system",
+      "target": "system.c::system_clear_exec_motion_overrides",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_setting_prefix",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_setting_prefix",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_line_feed",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_feedback_line_feed",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_feedback_line_feed",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_gcode_modes_G",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_gcode_modes_M",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_axis_values",
+      "target": "print.c::printFloat_CoordValue",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_axis_values",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_uint8_setting",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_uint8_setting",
+      "target": "report.c::report_util_setting_prefix",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_uint8_setting",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_float_setting",
+      "target": "print.c::printFloat",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_float_setting",
+      "target": "report.c::report_util_setting_prefix",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_util_float_setting",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_status_message",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_status_message",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_status_message",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_alarm_message",
+      "target": "nuts_bolts.c::delay_ms",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_alarm_message",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_alarm_message",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_alarm_message",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_feedback_message",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_feedback_message",
+      "target": "report.c::report_util_feedback_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_init_message",
+      "target": "eeprom.c::eeprom_get_char",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_init_message",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_init_message",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_init_message",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_init_message",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_grbl_help",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_grbl_settings",
+      "target": "report.c::report_util_uint8_setting",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_grbl_settings",
+      "target": "report.c::report_util_float_setting",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "print.c::printFloat_RateValue",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "report.c::report_util_feedback_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "report.c::report_util_gcode_modes_G",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "report.c::report_util_gcode_modes_M",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_gcode_modes",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_startup_line",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_startup_line",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_startup_line",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_startup_line",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_startup_line",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_execute_startup_message",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_execute_startup_message",
+      "target": "report.c::report_status_message",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_execute_startup_message",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_build_info",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_build_info",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_build_info",
+      "target": "report.c::report_util_feedback_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_echo_line_received",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_echo_line_received",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_echo_line_received",
+      "target": "report.c::report_util_feedback_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "planner.c::plan_get_block_buffer_available",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "print.c::printFloat_RateValue",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "report.c::report_util_line_feed",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "report.c::report_util_axis_values",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "serial.c::serial_get_rx_buffer_available",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "stepper.c::st_get_realtime_rate",
+      "type": "calls"
+    },
+    {
+      "source": "report.c::report_realtime_status",
+      "target": "system.c::system_convert_array_steps_to_mpos",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_startup_line",
+      "target": "eeprom.c::memcpy_to_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_startup_line",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_build_info",
+      "target": "eeprom.c::memcpy_to_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_write_coord_data",
+      "target": "eeprom.c::memcpy_to_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_write_coord_data",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::write_global_settings",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::write_global_settings",
+      "target": "eeprom.c::memcpy_to_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_restore",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_restore",
+      "target": "settings.c::settings_write_coord_data",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_restore",
+      "target": "settings.c::write_global_settings",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_startup_line",
+      "target": "eeprom.c::memcpy_from_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_startup_line",
+      "target": "settings.c::settings_store_startup_line",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_build_info",
+      "target": "eeprom.c::memcpy_from_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_build_info",
+      "target": "settings.c::settings_store_build_info",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_coord_data",
+      "target": "eeprom.c::memcpy_from_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_read_coord_data",
+      "target": "settings.c::settings_write_coord_data",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::read_global_settings",
+      "target": "eeprom.c::eeprom_get_char",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::read_global_settings",
+      "target": "eeprom.c::memcpy_from_eeprom_with_checksum",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_global_setting",
+      "target": "limits.c::limits_init",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_global_setting",
+      "target": "settings.c::write_global_settings",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_global_setting",
+      "target": "stepper.c::st_generate_step_dir_invert_masks",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_global_setting",
+      "target": "system.c::system_flag_wco_change",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_store_global_setting",
+      "target": "tmc_config.c::tmc_update_sgthrs_live",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_init",
+      "target": "report.c::report_status_message",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_init",
+      "target": "report.c::report_grbl_settings",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_init",
+      "target": "settings.c::settings_restore",
+      "type": "calls"
+    },
+    {
+      "source": "settings.c::settings_init",
+      "target": "settings.c::read_global_settings",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_wake_up",
+      "target": "tmc_config.c::tmc_enable_steppers",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_go_idle",
+      "target": "nuts_bolts.c::delay_ms",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_go_idle",
+      "target": "tmc_config.c::tmc_enable_steppers",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_go_idle",
+      "target": "tmc_config.c::tmc_disable_steppers",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_generate_step_dir_invert_masks",
+      "target": "settings.c::get_step_pin_mask",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_generate_step_dir_invert_masks",
+      "target": "settings.c::get_direction_pin_mask",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_reset",
+      "target": "stepper.c::st_go_idle",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_reset",
+      "target": "stepper.c::st_generate_step_dir_invert_masks",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_prep_buffer",
+      "target": "planner.c::plan_discard_current_block",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_prep_buffer",
+      "target": "planner.c::plan_get_exec_block_exit_speed_sqr",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_prep_buffer",
+      "target": "planner.c::plan_compute_profile_nominal_speed",
+      "type": "calls"
+    },
+    {
+      "source": "stepper.c::st_prep_buffer",
+      "target": "stepper.c::st_next_block_index",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_startup",
+      "target": "gcode.c::gc_execute_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_startup",
+      "target": "report.c::report_execute_startup_message",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_startup",
+      "target": "settings.c::settings_read_startup_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "gcode.c::gc_execute_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "motion_control.c::mc_homing_cycle",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "motion_control.c::mc_reset",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "nuts_bolts.c::read_float",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "nuts_bolts.c::delay_ms",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "print.c::print_uint32_base10",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_status_message",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_feedback_message",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_grbl_help",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_grbl_settings",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_gcode_modes",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_startup_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "report.c::report_build_info",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "serial.c::serial_read",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_store_startup_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_store_build_info",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_restore",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_read_startup_line",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_read_build_info",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "settings.c::settings_store_global_setting",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "stepper.c::st_go_idle",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "system.c::system_execute_startup",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "system.c::system_set_exec_state_flag",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "tmc_config.c::tmc_report_details",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "tmc_uart.c::tmc_crc8",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "tmc_uart.c::tmc_uart_read_reg_async",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_execute_line",
+      "target": "tmc_uart.c::tmc_uart_read_raw",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_flag_wco_change",
+      "target": "protocol.c::protocol_buffer_synchronize",
+      "type": "calls"
+    },
+    {
+      "source": "system.c::system_convert_array_steps_to_mpos",
+      "target": "system.c::system_convert_axis_steps_to_mpos",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_update_sgthrs_live",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_init_all",
+      "target": "tmc_config.c::tmc_stallguard_disable",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_init_all",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_enable_steppers",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_disable_steppers",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_stallguard_enable",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_stallguard_disable",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_calibrate_sgthrs",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_calibrate_sgthrs",
+      "target": "tmc_uart.c::tmc_uart_read_reg_async",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "eeprom.c::eeprom_get_char",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "eeprom.c::eeprom_put_char",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_config_poll_state",
+      "target": "tmc_uart.c::tmc_uart_read_reg_async",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::read_with_retry",
+      "target": "tmc_uart.c::tmc_uart_read_reg",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "print.c::printString",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "print.c::printPgmString",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "print.c::print_uint8_base10",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "print.c::print_uint32_base16_padded",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "serial.c::serial_write",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_config.c::tmc_report_details",
+      "target": "tmc_config.c::read_with_retry",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_write_reg",
+      "target": "tmc_uart.c::tmc_uart_tx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_write_reg",
+      "target": "tmc_uart.c::tmc_crc8",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg",
+      "target": "tmc_uart.c::tmc_uart_tx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg",
+      "target": "tmc_uart.c::tmc_uart_rx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg",
+      "target": "tmc_uart.c::tmc_crc8",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg_async",
+      "target": "tmc_uart.c::tmc_uart_tx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg_async",
+      "target": "tmc_uart.c::tmc_uart_rx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_reg_async",
+      "target": "tmc_uart.c::tmc_crc8",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_raw",
+      "target": "tmc_uart.c::tmc_uart_tx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_raw",
+      "target": "tmc_uart.c::tmc_uart_rx_byte",
+      "type": "calls"
+    },
+    {
+      "source": "tmc_uart.c::tmc_uart_read_raw",
+      "target": "tmc_uart.c::tmc_crc8",
+      "type": "calls"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::setup",
+      "target": "tmc_config.c::tmc_config_init_all",
+      "type": "calls"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::setup",
+      "target": "tmc_uart.c::tmc_uart_init",
+      "type": "calls"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::setup",
+      "target": "tmc_uart.c::tmc_uart_write_reg",
+      "type": "calls"
+    },
+    {
+      "source": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::loop",
+      "target": "tmc_config.c::tmc_report_details",
+      "type": "calls"
+    },
+    {
+      "source": "examples/tmc2209_simulator/tmc2209_simulator.ino::loop",
+      "target": "examples/tmc2209_simulator/tmc2209_simulator.ino::calcTmcCrc",
+      "type": "calls"
+    }
+  ],
+  "functions": {
+    "eeprom.c::eeprom_get_char": {
+      "name": "eeprom_get_char",
+      "file": "eeprom.c",
+      "return_type": "char",
+      "args": "unsigned int addr",
+      "is_definition": true,
+      "line": 5
+    },
+    "eeprom.c::eeprom_put_char": {
+      "name": "eeprom_put_char",
+      "file": "eeprom.c",
+      "return_type": "void",
+      "args": "unsigned int addr, unsigned char new_value",
+      "is_definition": true,
+      "line": 13
+    },
+    "eeprom.c::memcpy_to_eeprom_with_checksum": {
+      "name": "memcpy_to_eeprom_with_checksum",
+      "file": "eeprom.c",
+      "return_type": "void",
+      "args": "unsigned int destination, char *source,\n                                    unsigned int size",
+      "is_definition": true,
+      "line": 41
+    },
+    "eeprom.c::memcpy_from_eeprom_with_checksum": {
+      "name": "memcpy_from_eeprom_with_checksum",
+      "file": "eeprom.c",
+      "return_type": "int",
+      "args": "char *destination, unsigned int source,\n                                     unsigned int size",
+      "is_definition": true,
+      "line": 49
+    },
+    "eeprom.h::eeprom_get_char": {
+      "name": "eeprom_get_char",
+      "file": "eeprom.h",
+      "return_type": "char",
+      "args": "unsigned int addr",
+      "is_definition": false,
+      "line": 2
+    },
+    "eeprom.h::eeprom_put_char": {
+      "name": "eeprom_put_char",
+      "file": "eeprom.h",
+      "return_type": "void",
+      "args": "unsigned int addr, unsigned char new_value",
+      "is_definition": false,
+      "line": 3
+    },
+    "eeprom.h::memcpy_to_eeprom_with_checksum": {
+      "name": "memcpy_to_eeprom_with_checksum",
+      "file": "eeprom.h",
+      "return_type": "void",
+      "args": "unsigned int destination, char *source,\n                                    unsigned int size",
+      "is_definition": false,
+      "line": 4
+    },
+    "eeprom.h::memcpy_from_eeprom_with_checksum": {
+      "name": "memcpy_from_eeprom_with_checksum",
+      "file": "eeprom.h",
+      "return_type": "int",
+      "args": "char *destination, unsigned int source,\n                                     unsigned int size",
+      "is_definition": false,
+      "line": 11
+    },
+    "gcode.c::gc_init": {
+      "name": "gc_init",
+      "file": "gcode.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 10
+    },
+    "gcode.c::gc_sync_position": {
+      "name": "gc_sync_position",
+      "file": "gcode.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 13
+    },
+    "gcode.c::gc_execute_line": {
+      "name": "gc_execute_line",
+      "file": "gcode.c",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 14
+    },
+    "gcode.c::mc_override_ctrl_update": {
+      "name": "mc_override_ctrl_update",
+      "file": "gcode.c",
+      "return_type": "n",
+      "args": "gc_state.modal.override",
+      "is_definition": false,
+      "line": 367
+    },
+    "gcode.h::gc_init": {
+      "name": "gc_init",
+      "file": "gcode.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 58
+    },
+    "gcode.h::gc_execute_line": {
+      "name": "gc_execute_line",
+      "file": "gcode.h",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 58
+    },
+    "gcode.h::gc_sync_position": {
+      "name": "gc_sync_position",
+      "file": "gcode.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 59
+    },
+    "jog.c::jog_execute": {
+      "name": "jog_execute",
+      "file": "jog.c",
+      "return_type": "uint8_t",
+      "args": "plan_line_data_t *pl_data, parser_block_t *gc_block",
+      "is_definition": true,
+      "line": 3
+    },
+    "jog.h::jog_execute": {
+      "name": "jog_execute",
+      "file": "jog.h",
+      "return_type": "uint8_t",
+      "args": "plan_line_data_t *pl_data, parser_block_t *gc_block",
+      "is_definition": false,
+      "line": 5
+    },
+    "limits.c::limits_init": {
+      "name": "limits_init",
+      "file": "limits.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 9
+    },
+    "limits.c::limits_disable": {
+      "name": "limits_disable",
+      "file": "limits.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 16
+    },
+    "limits.c::limits_get_state": {
+      "name": "limits_get_state",
+      "file": "limits.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 18
+    },
+    "limits.c::limits_go_home": {
+      "name": "limits_go_home",
+      "file": "limits.c",
+      "return_type": "void",
+      "args": "uint8_t cycle_mask",
+      "is_definition": true,
+      "line": 36
+    },
+    "limits.c::limits_soft_check": {
+      "name": "limits_soft_check",
+      "file": "limits.c",
+      "return_type": "void",
+      "args": "float *target",
+      "is_definition": true,
+      "line": 338
+    },
+    "limits.h::limits_init": {
+      "name": "limits_init",
+      "file": "limits.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 2
+    },
+    "limits.h::limits_disable": {
+      "name": "limits_disable",
+      "file": "limits.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 2
+    },
+    "limits.h::limits_get_state": {
+      "name": "limits_get_state",
+      "file": "limits.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 3
+    },
+    "limits.h::limits_go_home": {
+      "name": "limits_go_home",
+      "file": "limits.h",
+      "return_type": "void",
+      "args": "uint8_t cycle_mask",
+      "is_definition": false,
+      "line": 3
+    },
+    "limits.h::limits_soft_check": {
+      "name": "limits_soft_check",
+      "file": "limits.h",
+      "return_type": "void",
+      "args": "float *target",
+      "is_definition": false,
+      "line": 6
+    },
+    "main.c::main": {
+      "name": "main",
+      "file": "main.c",
+      "return_type": "int",
+      "args": "void",
+      "is_definition": true,
+      "line": 11
+    },
+    "motion_control.c::mc_line": {
+      "name": "mc_line",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "float *target, plan_line_data_t *pl_data",
+      "is_definition": true,
+      "line": 5
+    },
+    "motion_control.c::mc_dwell": {
+      "name": "mc_dwell",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "float seconds",
+      "is_definition": true,
+      "line": 31
+    },
+    "motion_control.c::mc_homing_cycle": {
+      "name": "mc_homing_cycle",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "uint8_t cycle_mask",
+      "is_definition": true,
+      "line": 33
+    },
+    "motion_control.c::limits_disable": {
+      "name": "limits_disable",
+      "file": "motion_control.c",
+      "return_type": "endif",
+      "args": "",
+      "is_definition": false,
+      "line": 36
+    },
+    "motion_control.c::limits_go_home": {
+      "name": "limits_go_home",
+      "file": "motion_control.c",
+      "return_type": "HOMING_CYCLE_2",
+      "args": "HOMING_CYCLE_2",
+      "is_definition": false,
+      "line": 44
+    },
+    "motion_control.c::mc_parking_motion": {
+      "name": "mc_parking_motion",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "float *parking_target, plan_line_data_t *pl_data",
+      "is_definition": true,
+      "line": 53
+    },
+    "motion_control.c::mc_override_ctrl_update": {
+      "name": "mc_override_ctrl_update",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "uint8_t override_state",
+      "is_definition": true,
+      "line": 74
+    },
+    "motion_control.c::mc_reset": {
+      "name": "mc_reset",
+      "file": "motion_control.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 76
+    },
+    "motion_control.h::mc_line": {
+      "name": "mc_line",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "float *target, plan_line_data_t *pl_data",
+      "is_definition": false,
+      "line": 9
+    },
+    "motion_control.h::mc_dwell": {
+      "name": "mc_dwell",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "float seconds",
+      "is_definition": false,
+      "line": 9
+    },
+    "motion_control.h::mc_homing_cycle": {
+      "name": "mc_homing_cycle",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "uint8_t cycle_mask",
+      "is_definition": false,
+      "line": 10
+    },
+    "motion_control.h::mc_override_ctrl_update": {
+      "name": "mc_override_ctrl_update",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "uint8_t override_state",
+      "is_definition": false,
+      "line": 11
+    },
+    "motion_control.h::mc_parking_motion": {
+      "name": "mc_parking_motion",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "float *parking_target, plan_line_data_t *pl_data",
+      "is_definition": false,
+      "line": 13
+    },
+    "motion_control.h::mc_reset": {
+      "name": "mc_reset",
+      "file": "motion_control.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 14
+    },
+    "nuts_bolts.c::read_float": {
+      "name": "read_float",
+      "file": "nuts_bolts.c",
+      "return_type": "uint8_t",
+      "args": "char *line, uint8_t *char_counter, float *float_ptr",
+      "is_definition": true,
+      "line": 5
+    },
+    "nuts_bolts.c::delay_sec": {
+      "name": "delay_sec",
+      "file": "nuts_bolts.c",
+      "return_type": "void",
+      "args": "float seconds, uint8_t mode",
+      "is_definition": true,
+      "line": 32
+    },
+    "nuts_bolts.c::delay_ms": {
+      "name": "delay_ms",
+      "file": "nuts_bolts.c",
+      "return_type": "void",
+      "args": "uint16_t ms",
+      "is_definition": true,
+      "line": 42
+    },
+    "nuts_bolts.c::delay_us": {
+      "name": "delay_us",
+      "file": "nuts_bolts.c",
+      "return_type": "void",
+      "args": "uint32_t us",
+      "is_definition": true,
+      "line": 45
+    },
+    "nuts_bolts.c::hypot_f": {
+      "name": "hypot_f",
+      "file": "nuts_bolts.c",
+      "return_type": "float",
+      "args": "float x, float y",
+      "is_definition": true,
+      "line": 59
+    },
+    "nuts_bolts.c::convert_delta_vector_to_unit_vector": {
+      "name": "convert_delta_vector_to_unit_vector",
+      "file": "nuts_bolts.c",
+      "return_type": "float",
+      "args": "float *vector",
+      "is_definition": true,
+      "line": 62
+    },
+    "nuts_bolts.c::limit_value_by_axis_maximum": {
+      "name": "limit_value_by_axis_maximum",
+      "file": "nuts_bolts.c",
+      "return_type": "float",
+      "args": "float *max_value, float *unit_vec",
+      "is_definition": true,
+      "line": 80
+    },
+    "nuts_bolts.h::read_float": {
+      "name": "read_float",
+      "file": "nuts_bolts.h",
+      "return_type": "uint8_t",
+      "args": "char *line, uint8_t *char_counter, float *float_ptr",
+      "is_definition": false,
+      "line": 30
+    },
+    "nuts_bolts.h::delay_sec": {
+      "name": "delay_sec",
+      "file": "nuts_bolts.h",
+      "return_type": "void",
+      "args": "float seconds, uint8_t mode",
+      "is_definition": false,
+      "line": 31
+    },
+    "nuts_bolts.h::delay_ms": {
+      "name": "delay_ms",
+      "file": "nuts_bolts.h",
+      "return_type": "void",
+      "args": "uint16_t ms",
+      "is_definition": false,
+      "line": 32
+    },
+    "nuts_bolts.h::delay_us": {
+      "name": "delay_us",
+      "file": "nuts_bolts.h",
+      "return_type": "void",
+      "args": "uint32_t us",
+      "is_definition": false,
+      "line": 34
+    },
+    "nuts_bolts.h::hypot_f": {
+      "name": "hypot_f",
+      "file": "nuts_bolts.h",
+      "return_type": "float",
+      "args": "float x, float y",
+      "is_definition": false,
+      "line": 37
+    },
+    "nuts_bolts.h::convert_delta_vector_to_unit_vector": {
+      "name": "convert_delta_vector_to_unit_vector",
+      "file": "nuts_bolts.h",
+      "return_type": "float",
+      "args": "float *vector",
+      "is_definition": false,
+      "line": 37
+    },
+    "nuts_bolts.h::limit_value_by_axis_maximum": {
+      "name": "limit_value_by_axis_maximum",
+      "file": "nuts_bolts.h",
+      "return_type": "float",
+      "args": "float *max_value, float *unit_vec",
+      "is_definition": false,
+      "line": 38
+    },
+    "planner.c::plan_next_block_index": {
+      "name": "plan_next_block_index",
+      "file": "planner.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t block_index",
+      "is_definition": true,
+      "line": 14
+    },
+    "planner.c::plan_prev_block_index": {
+      "name": "plan_prev_block_index",
+      "file": "planner.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t block_index",
+      "is_definition": true,
+      "line": 16
+    },
+    "planner.c::planner_recalculate": {
+      "name": "planner_recalculate",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 20
+    },
+    "planner.c::plan_reset": {
+      "name": "plan_reset",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 76
+    },
+    "planner.c::plan_reset_buffer": {
+      "name": "plan_reset_buffer",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 77
+    },
+    "planner.c::plan_discard_current_block": {
+      "name": "plan_discard_current_block",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 79
+    },
+    "planner.c::plan_get_exec_block_exit_speed_sqr": {
+      "name": "plan_get_exec_block_exit_speed_sqr",
+      "file": "planner.c",
+      "return_type": "float",
+      "args": "",
+      "is_definition": true,
+      "line": 88
+    },
+    "planner.c::plan_check_full_buffer": {
+      "name": "plan_check_full_buffer",
+      "file": "planner.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 93
+    },
+    "planner.c::plan_compute_profile_nominal_speed": {
+      "name": "plan_compute_profile_nominal_speed",
+      "file": "planner.c",
+      "return_type": "float",
+      "args": "plan_block_t *block",
+      "is_definition": true,
+      "line": 94
+    },
+    "planner.c::plan_compute_profile_parameters": {
+      "name": "plan_compute_profile_parameters",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "plan_block_t *block,\n                                            float nominal_speed,\n                                            float prev_nominal_speed",
+      "is_definition": true,
+      "line": 101
+    },
+    "planner.c::plan_update_velocity_profile_parameters": {
+      "name": "plan_update_velocity_profile_parameters",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 110
+    },
+    "planner.c::plan_buffer_line": {
+      "name": "plan_buffer_line",
+      "file": "planner.c",
+      "return_type": "uint8_t",
+      "args": "float *target, plan_line_data_t *pl_data",
+      "is_definition": true,
+      "line": 119
+    },
+    "planner.c::plan_sync_position": {
+      "name": "plan_sync_position",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 195
+    },
+    "planner.c::plan_get_block_buffer_available": {
+      "name": "plan_get_block_buffer_available",
+      "file": "planner.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 201
+    },
+    "planner.c::plan_cycle_reinitialize": {
+      "name": "plan_cycle_reinitialize",
+      "file": "planner.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 205
+    },
+    "planner.h::plan_reset": {
+      "name": "plan_reset",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 57
+    },
+    "planner.h::plan_reset_buffer": {
+      "name": "plan_reset_buffer",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 57
+    },
+    "planner.h::plan_buffer_line": {
+      "name": "plan_buffer_line",
+      "file": "planner.h",
+      "return_type": "uint8_t",
+      "args": "float *target, plan_line_data_t *pl_data",
+      "is_definition": false,
+      "line": 57
+    },
+    "planner.h::plan_discard_current_block": {
+      "name": "plan_discard_current_block",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 60
+    },
+    "planner.h::plan_next_block_index": {
+      "name": "plan_next_block_index",
+      "file": "planner.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t block_index",
+      "is_definition": false,
+      "line": 61
+    },
+    "planner.h::plan_get_exec_block_exit_speed_sqr": {
+      "name": "plan_get_exec_block_exit_speed_sqr",
+      "file": "planner.h",
+      "return_type": "float",
+      "args": "",
+      "is_definition": false,
+      "line": 63
+    },
+    "planner.h::plan_compute_profile_nominal_speed": {
+      "name": "plan_compute_profile_nominal_speed",
+      "file": "planner.h",
+      "return_type": "float",
+      "args": "plan_block_t *block",
+      "is_definition": false,
+      "line": 64
+    },
+    "planner.h::plan_update_velocity_profile_parameters": {
+      "name": "plan_update_velocity_profile_parameters",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 65
+    },
+    "planner.h::plan_sync_position": {
+      "name": "plan_sync_position",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 66
+    },
+    "planner.h::plan_cycle_reinitialize": {
+      "name": "plan_cycle_reinitialize",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 67
+    },
+    "planner.h::plan_get_block_buffer_available": {
+      "name": "plan_get_block_buffer_available",
+      "file": "planner.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 67
+    },
+    "planner.h::plan_check_full_buffer": {
+      "name": "plan_check_full_buffer",
+      "file": "planner.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 68
+    },
+    "planner.h::plan_get_planner_mpos": {
+      "name": "plan_get_planner_mpos",
+      "file": "planner.h",
+      "return_type": "void",
+      "args": "float *target",
+      "is_definition": false,
+      "line": 68
+    },
+    "print.c::printString": {
+      "name": "printString",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "const char *s",
+      "is_definition": true,
+      "line": 2
+    },
+    "print.c::printPgmString": {
+      "name": "printPgmString",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "const char *s",
+      "is_definition": true,
+      "line": 4
+    },
+    "print.c::print_uint8_base10": {
+      "name": "print_uint8_base10",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "uint8_t n",
+      "is_definition": true,
+      "line": 6
+    },
+    "print.c::print_uint8_base2_ndigit": {
+      "name": "print_uint8_base2_ndigit",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "uint8_t n, uint8_t digits",
+      "is_definition": true,
+      "line": 23
+    },
+    "print.c::print_uint32_base10": {
+      "name": "print_uint32_base10",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "uint32_t n",
+      "is_definition": true,
+      "line": 35
+    },
+    "print.c::printInteger": {
+      "name": "printInteger",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "long n",
+      "is_definition": true,
+      "line": 50
+    },
+    "print.c::printFloat": {
+      "name": "printFloat",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "float n, uint8_t decimal_places",
+      "is_definition": true,
+      "line": 58
+    },
+    "print.c::printFloat_CoordValue": {
+      "name": "printFloat_CoordValue",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "float n",
+      "is_definition": true,
+      "line": 95
+    },
+    "print.c::printFloat_RateValue": {
+      "name": "printFloat_RateValue",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "float n",
+      "is_definition": true,
+      "line": 100
+    },
+    "print.c::print_uint32_base16_padded": {
+      "name": "print_uint32_base16_padded",
+      "file": "print.c",
+      "return_type": "void",
+      "args": "uint32_t n",
+      "is_definition": true,
+      "line": 105
+    },
+    "print.h::printString": {
+      "name": "printString",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "const char *s",
+      "is_definition": false,
+      "line": 2
+    },
+    "print.h::printPgmString": {
+      "name": "printPgmString",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "const char *s",
+      "is_definition": false,
+      "line": 4
+    },
+    "print.h::printInteger": {
+      "name": "printInteger",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "long n",
+      "is_definition": false,
+      "line": 4
+    },
+    "print.h::print_uint32_base10": {
+      "name": "print_uint32_base10",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "uint32_t n",
+      "is_definition": false,
+      "line": 4
+    },
+    "print.h::print_uint8_base10": {
+      "name": "print_uint8_base10",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "uint8_t n",
+      "is_definition": false,
+      "line": 5
+    },
+    "print.h::print_uint8_base2_ndigit": {
+      "name": "print_uint8_base2_ndigit",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "uint8_t n, uint8_t digits",
+      "is_definition": false,
+      "line": 5
+    },
+    "print.h::printFloat": {
+      "name": "printFloat",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "float n, uint8_t decimal_places",
+      "is_definition": false,
+      "line": 6
+    },
+    "print.h::printFloat_CoordValue": {
+      "name": "printFloat_CoordValue",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "float n",
+      "is_definition": false,
+      "line": 7
+    },
+    "print.h::printFloat_RateValue": {
+      "name": "printFloat_RateValue",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "float n",
+      "is_definition": false,
+      "line": 7
+    },
+    "print.h::print_uint32_base16_padded": {
+      "name": "print_uint32_base16_padded",
+      "file": "print.h",
+      "return_type": "void",
+      "args": "uint32_t n",
+      "is_definition": false,
+      "line": 8
+    },
+    "protocol.c::protocol_exec_rt_suspend": {
+      "name": "protocol_exec_rt_suspend",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 283
+    },
+    "protocol.c::protocol_main_loop": {
+      "name": "protocol_main_loop",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 9
+    },
+    "protocol.c::report_echo_line_received": {
+      "name": "report_echo_line_received",
+      "file": "protocol.c",
+      "return_type": "REPORT_ECHO_LINE_RECEIVED",
+      "args": "line",
+      "is_definition": false,
+      "line": 32
+    },
+    "protocol.c::protocol_buffer_synchronize": {
+      "name": "protocol_buffer_synchronize",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 82
+    },
+    "protocol.c::protocol_auto_cycle_start": {
+      "name": "protocol_auto_cycle_start",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 89
+    },
+    "protocol.c::protocol_execute_realtime": {
+      "name": "protocol_execute_realtime",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 93
+    },
+    "protocol.c::protocol_exec_rt_system": {
+      "name": "protocol_exec_rt_system",
+      "file": "protocol.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 96
+    },
+    "protocol.c::relays_stop_all": {
+      "name": "relays_stop_all",
+      "file": "protocol.c",
+      "return_type": "PARKING_ENABLE",
+      "args": "",
+      "is_definition": false,
+      "line": 298
+    },
+    "protocol.c::system_convert_array_steps_to_mpos": {
+      "name": "system_convert_array_steps_to_mpos",
+      "file": "protocol.c",
+      "return_type": "else",
+      "args": "parking_target, sys_position",
+      "is_definition": false,
+      "line": 301
+    },
+    "protocol.h::protocol_main_loop": {
+      "name": "protocol_main_loop",
+      "file": "protocol.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 5
+    },
+    "protocol.h::protocol_execute_realtime": {
+      "name": "protocol_execute_realtime",
+      "file": "protocol.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 6
+    },
+    "protocol.h::protocol_exec_rt_system": {
+      "name": "protocol_exec_rt_system",
+      "file": "protocol.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 6
+    },
+    "protocol.h::protocol_auto_cycle_start": {
+      "name": "protocol_auto_cycle_start",
+      "file": "protocol.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 8
+    },
+    "protocol.h::protocol_buffer_synchronize": {
+      "name": "protocol_buffer_synchronize",
+      "file": "protocol.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 9
+    },
+    "relays.c::relays_init": {
+      "name": "relays_init",
+      "file": "relays.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 2
+    },
+    "relays.c::relays_stop_all": {
+      "name": "relays_stop_all",
+      "file": "relays.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 9
+    },
+    "relays.c::relay_water": {
+      "name": "relay_water",
+      "file": "relays.c",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": true,
+      "line": 12
+    },
+    "relays.c::relay_fert": {
+      "name": "relay_fert",
+      "file": "relays.c",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": true,
+      "line": 17
+    },
+    "relays.c::relay_weeder": {
+      "name": "relay_weeder",
+      "file": "relays.c",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": true,
+      "line": 20
+    },
+    "relays.h::relays_init": {
+      "name": "relays_init",
+      "file": "relays.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 3
+    },
+    "relays.h::relays_stop_all": {
+      "name": "relays_stop_all",
+      "file": "relays.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 3
+    },
+    "relays.h::relay_water": {
+      "name": "relay_water",
+      "file": "relays.h",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": false,
+      "line": 3
+    },
+    "relays.h::relay_fert": {
+      "name": "relay_fert",
+      "file": "relays.h",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": false,
+      "line": 7
+    },
+    "relays.h::relay_weeder": {
+      "name": "relay_weeder",
+      "file": "relays.h",
+      "return_type": "void",
+      "args": "uint8_t state",
+      "is_definition": false,
+      "line": 9
+    },
+    "report.c::report_util_setting_prefix": {
+      "name": "report_util_setting_prefix",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t n",
+      "is_definition": true,
+      "line": 4
+    },
+    "report.c::report_util_line_feed": {
+      "name": "report_util_line_feed",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 5
+    },
+    "report.c::report_util_feedback_line_feed": {
+      "name": "report_util_feedback_line_feed",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 6
+    },
+    "report.c::report_util_gcode_modes_G": {
+      "name": "report_util_gcode_modes_G",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 11
+    },
+    "report.c::report_util_gcode_modes_M": {
+      "name": "report_util_gcode_modes_M",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 13
+    },
+    "report.c::report_util_axis_values": {
+      "name": "report_util_axis_values",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "float *axis_value",
+      "is_definition": true,
+      "line": 16
+    },
+    "report.c::report_util_uint8_setting": {
+      "name": "report_util_uint8_setting",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t n, int val",
+      "is_definition": true,
+      "line": 23
+    },
+    "report.c::report_util_float_setting": {
+      "name": "report_util_float_setting",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t n, float val, uint8_t n_decimal",
+      "is_definition": true,
+      "line": 26
+    },
+    "report.c::report_status_message": {
+      "name": "report_status_message",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t status_code",
+      "is_definition": true,
+      "line": 32
+    },
+    "report.c::report_alarm_message": {
+      "name": "report_alarm_message",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t alarm_code",
+      "is_definition": true,
+      "line": 43
+    },
+    "report.c::report_feedback_message": {
+      "name": "report_feedback_message",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t message_code",
+      "is_definition": true,
+      "line": 50
+    },
+    "report.c::report_init_message": {
+      "name": "report_init_message",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 89
+    },
+    "report.c::report_grbl_help": {
+      "name": "report_grbl_help",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 117
+    },
+    "report.c::report_grbl_settings": {
+      "name": "report_grbl_settings",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 122
+    },
+    "report.c::report_gcode_modes": {
+      "name": "report_gcode_modes",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 184
+    },
+    "report.c::print_uint8_base10": {
+      "name": "print_uint8_base10",
+      "file": "report.c",
+      "return_type": "else",
+      "args": "gc_state.modal.program_flow",
+      "is_definition": false,
+      "line": 198
+    },
+    "report.c::report_startup_line": {
+      "name": "report_startup_line",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "uint8_t n, char *line",
+      "is_definition": true,
+      "line": 206
+    },
+    "report.c::report_execute_startup_message": {
+      "name": "report_execute_startup_message",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "char *line, uint8_t status_code",
+      "is_definition": true,
+      "line": 210
+    },
+    "report.c::report_build_info": {
+      "name": "report_build_info",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 219
+    },
+    "report.c::report_echo_line_received": {
+      "name": "report_echo_line_received",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 223
+    },
+    "report.c::report_realtime_status": {
+      "name": "report_realtime_status",
+      "file": "report.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 225
+    },
+    "report.h::report_status_message": {
+      "name": "report_status_message",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "uint8_t status_code",
+      "is_definition": false,
+      "line": 62
+    },
+    "report.h::report_alarm_message": {
+      "name": "report_alarm_message",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "uint8_t alarm_code",
+      "is_definition": false,
+      "line": 63
+    },
+    "report.h::report_feedback_message": {
+      "name": "report_feedback_message",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "uint8_t message_code",
+      "is_definition": false,
+      "line": 65
+    },
+    "report.h::report_init_message": {
+      "name": "report_init_message",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 67
+    },
+    "report.h::report_grbl_help": {
+      "name": "report_grbl_help",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 68
+    },
+    "report.h::report_grbl_settings": {
+      "name": "report_grbl_settings",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 69
+    },
+    "report.h::report_echo_line_received": {
+      "name": "report_echo_line_received",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 70
+    },
+    "report.h::report_realtime_status": {
+      "name": "report_realtime_status",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 71
+    },
+    "report.h::report_ngc_parameters": {
+      "name": "report_ngc_parameters",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 73
+    },
+    "report.h::report_gcode_modes": {
+      "name": "report_gcode_modes",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 74
+    },
+    "report.h::report_startup_line": {
+      "name": "report_startup_line",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "uint8_t n, char *line",
+      "is_definition": false,
+      "line": 75
+    },
+    "report.h::report_execute_startup_message": {
+      "name": "report_execute_startup_message",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "char *line, uint8_t status_code",
+      "is_definition": false,
+      "line": 77
+    },
+    "report.h::report_build_info": {
+      "name": "report_build_info",
+      "file": "report.h",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 79
+    },
+    "serial.c::serial_get_rx_buffer_available": {
+      "name": "serial_get_rx_buffer_available",
+      "file": "serial.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 8
+    },
+    "serial.c::serial_get_rx_buffer_count": {
+      "name": "serial_get_rx_buffer_count",
+      "file": "serial.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 19
+    },
+    "serial.c::serial_get_tx_buffer_count": {
+      "name": "serial_get_tx_buffer_count",
+      "file": "serial.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 25
+    },
+    "serial.c::serial_init": {
+      "name": "serial_init",
+      "file": "serial.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 33
+    },
+    "serial.c::serial_write": {
+      "name": "serial_write",
+      "file": "serial.c",
+      "return_type": "void",
+      "args": "uint8_t data",
+      "is_definition": true,
+      "line": 41
+    },
+    "serial.c::serial_read": {
+      "name": "serial_read",
+      "file": "serial.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 62
+    },
+    "serial.c::serial_reset_read_buffer": {
+      "name": "serial_reset_read_buffer",
+      "file": "serial.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 139
+    },
+    "serial.h::serial_init": {
+      "name": "serial_init",
+      "file": "serial.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 4
+    },
+    "serial.h::serial_write": {
+      "name": "serial_write",
+      "file": "serial.h",
+      "return_type": "void",
+      "args": "uint8_t data",
+      "is_definition": false,
+      "line": 5
+    },
+    "serial.h::serial_read": {
+      "name": "serial_read",
+      "file": "serial.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 5
+    },
+    "serial.h::serial_reset_read_buffer": {
+      "name": "serial_reset_read_buffer",
+      "file": "serial.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 6
+    },
+    "serial.h::serial_get_rx_buffer_available": {
+      "name": "serial_get_rx_buffer_available",
+      "file": "serial.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 6
+    },
+    "serial.h::serial_get_rx_buffer_count": {
+      "name": "serial_get_rx_buffer_count",
+      "file": "serial.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 7
+    },
+    "serial.h::serial_get_tx_buffer_count": {
+      "name": "serial_get_tx_buffer_count",
+      "file": "serial.h",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": false,
+      "line": 7
+    },
+    "settings.c::settings_store_startup_line": {
+      "name": "settings_store_startup_line",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "uint8_t n, char *line",
+      "is_definition": true,
+      "line": 44
+    },
+    "settings.c::protocol_buffer_synchronize": {
+      "name": "protocol_buffer_synchronize",
+      "file": "settings.c",
+      "return_type": "FORCE_BUFFER_SYNC_DURING_EEPROM_WRITE",
+      "args": "",
+      "is_definition": false,
+      "line": 55
+    },
+    "settings.c::settings_store_build_info": {
+      "name": "settings_store_build_info",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 50
+    },
+    "settings.c::settings_write_coord_data": {
+      "name": "settings_write_coord_data",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "uint8_t coord_select, float *coord_data",
+      "is_definition": true,
+      "line": 54
+    },
+    "settings.c::write_global_settings": {
+      "name": "write_global_settings",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 63
+    },
+    "settings.c::settings_restore": {
+      "name": "settings_restore",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "uint8_t restore_flag",
+      "is_definition": true,
+      "line": 68
+    },
+    "settings.c::eeprom_put_char": {
+      "name": "eeprom_put_char",
+      "file": "settings.c",
+      "return_type": "0",
+      "args": "EEPROM_ADDR_STARTUP_BLOCK, 0",
+      "is_definition": false,
+      "line": 80
+    },
+    "settings.c::settings_read_startup_line": {
+      "name": "settings_read_startup_line",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t n, char *line",
+      "is_definition": true,
+      "line": 92
+    },
+    "settings.c::settings_read_build_info": {
+      "name": "settings_read_build_info",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 101
+    },
+    "settings.c::settings_read_coord_data": {
+      "name": "settings_read_coord_data",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t coord_select, float *coord_data",
+      "is_definition": true,
+      "line": 110
+    },
+    "settings.c::read_global_settings": {
+      "name": "read_global_settings",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "",
+      "is_definition": true,
+      "line": 123
+    },
+    "settings.c::settings_store_global_setting": {
+      "name": "settings_store_global_setting",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t parameter, float value",
+      "is_definition": true,
+      "line": 134
+    },
+    "settings.c::tmc_update_sgthrs_live": {
+      "name": "tmc_update_sgthrs_live",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "uint8_t axis, uint8_t val",
+      "is_definition": false,
+      "line": 165
+    },
+    "settings.c::settings_init": {
+      "name": "settings_init",
+      "file": "settings.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 262
+    },
+    "settings.c::get_step_pin_mask": {
+      "name": "get_step_pin_mask",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t axis_idx",
+      "is_definition": true,
+      "line": 267
+    },
+    "settings.c::get_direction_pin_mask": {
+      "name": "get_direction_pin_mask",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t axis_idx",
+      "is_definition": true,
+      "line": 272
+    },
+    "settings.c::get_limit_pin_mask": {
+      "name": "get_limit_pin_mask",
+      "file": "settings.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t axis_idx",
+      "is_definition": true,
+      "line": 279
+    },
+    "settings.h::settings_init": {
+      "name": "settings_init",
+      "file": "settings.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 65
+    },
+    "settings.h::settings_restore": {
+      "name": "settings_restore",
+      "file": "settings.h",
+      "return_type": "void",
+      "args": "uint8_t restore_flag",
+      "is_definition": false,
+      "line": 65
+    },
+    "settings.h::settings_store_global_setting": {
+      "name": "settings_store_global_setting",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t parameter, float value",
+      "is_definition": false,
+      "line": 66
+    },
+    "settings.h::settings_store_startup_line": {
+      "name": "settings_store_startup_line",
+      "file": "settings.h",
+      "return_type": "void",
+      "args": "uint8_t n, char *line",
+      "is_definition": false,
+      "line": 67
+    },
+    "settings.h::settings_read_startup_line": {
+      "name": "settings_read_startup_line",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t n, char *line",
+      "is_definition": false,
+      "line": 69
+    },
+    "settings.h::settings_store_build_info": {
+      "name": "settings_store_build_info",
+      "file": "settings.h",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 71
+    },
+    "settings.h::settings_read_build_info": {
+      "name": "settings_read_build_info",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 72
+    },
+    "settings.h::settings_write_coord_data": {
+      "name": "settings_write_coord_data",
+      "file": "settings.h",
+      "return_type": "void",
+      "args": "uint8_t coord_select, float *coord_data",
+      "is_definition": false,
+      "line": 72
+    },
+    "settings.h::settings_read_coord_data": {
+      "name": "settings_read_coord_data",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t coord_select, float *coord_data",
+      "is_definition": false,
+      "line": 73
+    },
+    "settings.h::get_step_pin_mask": {
+      "name": "get_step_pin_mask",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t i",
+      "is_definition": false,
+      "line": 75
+    },
+    "settings.h::get_direction_pin_mask": {
+      "name": "get_direction_pin_mask",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t i",
+      "is_definition": false,
+      "line": 76
+    },
+    "settings.h::get_limit_pin_mask": {
+      "name": "get_limit_pin_mask",
+      "file": "settings.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t i",
+      "is_definition": false,
+      "line": 76
+    },
+    "stepper.c::st_wake_up": {
+      "name": "st_wake_up",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 66
+    },
+    "stepper.c::st_go_idle": {
+      "name": "st_go_idle",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 69
+    },
+    "stepper.c::st_generate_step_dir_invert_masks": {
+      "name": "st_generate_step_dir_invert_masks",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 174
+    },
+    "stepper.c::st_reset": {
+      "name": "st_reset",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 183
+    },
+    "stepper.c::stepper_init": {
+      "name": "stepper_init",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 193
+    },
+    "stepper.c::st_update_plan_block_parameters": {
+      "name": "st_update_plan_block_parameters",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 199
+    },
+    "stepper.c::st_next_block_index": {
+      "name": "st_next_block_index",
+      "file": "stepper.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t block_index",
+      "is_definition": true,
+      "line": 203
+    },
+    "stepper.c::st_parking_setup_buffer": {
+      "name": "st_parking_setup_buffer",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 206
+    },
+    "stepper.c::st_parking_restore_buffer": {
+      "name": "st_parking_restore_buffer",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 211
+    },
+    "stepper.c::st_prep_buffer": {
+      "name": "st_prep_buffer",
+      "file": "stepper.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 227
+    },
+    "stepper.c::st_get_realtime_rate": {
+      "name": "st_get_realtime_rate",
+      "file": "stepper.c",
+      "return_type": "float",
+      "args": "",
+      "is_definition": true,
+      "line": 512
+    },
+    "stepper.h::stepper_init": {
+      "name": "stepper_init",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 6
+    },
+    "stepper.h::st_wake_up": {
+      "name": "st_wake_up",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 9
+    },
+    "stepper.h::st_go_idle": {
+      "name": "st_go_idle",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 9
+    },
+    "stepper.h::st_generate_step_dir_invert_masks": {
+      "name": "st_generate_step_dir_invert_masks",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 10
+    },
+    "stepper.h::st_reset": {
+      "name": "st_reset",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 13
+    },
+    "stepper.h::st_prep_buffer": {
+      "name": "st_prep_buffer",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 13
+    },
+    "stepper.h::st_update_plan_block_parameters": {
+      "name": "st_update_plan_block_parameters",
+      "file": "stepper.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 16
+    },
+    "stepper.h::st_get_realtime_rate": {
+      "name": "st_get_realtime_rate",
+      "file": "stepper.h",
+      "return_type": "float",
+      "args": "",
+      "is_definition": false,
+      "line": 16
+    },
+    "system.c::system_execute_startup": {
+      "name": "system_execute_startup",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 5
+    },
+    "system.c::system_execute_line": {
+      "name": "system_execute_line",
+      "file": "system.c",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": true,
+      "line": 14
+    },
+    "system.c::system_flag_wco_change": {
+      "name": "system_flag_wco_change",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 263
+    },
+    "system.c::protocol_buffer_synchronize": {
+      "name": "protocol_buffer_synchronize",
+      "file": "system.c",
+      "return_type": "FORCE_BUFFER_SYNC_DURING_WCO_CHANGE",
+      "args": "",
+      "is_definition": false,
+      "line": 263
+    },
+    "system.c::system_convert_axis_steps_to_mpos": {
+      "name": "system_convert_axis_steps_to_mpos",
+      "file": "system.c",
+      "return_type": "float",
+      "args": "int32_t *steps, uint8_t idx",
+      "is_definition": true,
+      "line": 266
+    },
+    "system.c::system_convert_array_steps_to_mpos": {
+      "name": "system_convert_array_steps_to_mpos",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "float *position, int32_t *steps",
+      "is_definition": true,
+      "line": 281
+    },
+    "system.c::system_check_travel_limits": {
+      "name": "system_check_travel_limits",
+      "file": "system.c",
+      "return_type": "uint8_t",
+      "args": "float *target",
+      "is_definition": true,
+      "line": 286
+    },
+    "system.c::system_set_exec_state_flag": {
+      "name": "system_set_exec_state_flag",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": true,
+      "line": 291
+    },
+    "system.c::system_clear_exec_state_flag": {
+      "name": "system_clear_exec_state_flag",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": true,
+      "line": 296
+    },
+    "system.c::system_set_exec_alarm": {
+      "name": "system_set_exec_alarm",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "uint8_t code",
+      "is_definition": true,
+      "line": 301
+    },
+    "system.c::system_clear_exec_alarm": {
+      "name": "system_clear_exec_alarm",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 304
+    },
+    "system.c::system_set_exec_motion_override_flag": {
+      "name": "system_set_exec_motion_override_flag",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": true,
+      "line": 308
+    },
+    "system.c::system_clear_exec_motion_overrides": {
+      "name": "system_clear_exec_motion_overrides",
+      "file": "system.c",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 314
+    },
+    "system.h::system_execute_line": {
+      "name": "system_execute_line",
+      "file": "system.h",
+      "return_type": "uint8_t",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 80
+    },
+    "system.h::system_execute_startup": {
+      "name": "system_execute_startup",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "char *line",
+      "is_definition": false,
+      "line": 81
+    },
+    "system.h::system_flag_wco_change": {
+      "name": "system_flag_wco_change",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 82
+    },
+    "system.h::system_convert_axis_steps_to_mpos": {
+      "name": "system_convert_axis_steps_to_mpos",
+      "file": "system.h",
+      "return_type": "float",
+      "args": "int32_t *steps, uint8_t idx",
+      "is_definition": false,
+      "line": 82
+    },
+    "system.h::system_convert_array_steps_to_mpos": {
+      "name": "system_convert_array_steps_to_mpos",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "float *position, int32_t *steps",
+      "is_definition": false,
+      "line": 83
+    },
+    "system.h::system_check_travel_limits": {
+      "name": "system_check_travel_limits",
+      "file": "system.h",
+      "return_type": "uint8_t",
+      "args": "float *target",
+      "is_definition": false,
+      "line": 86
+    },
+    "system.h::system_set_exec_state_flag": {
+      "name": "system_set_exec_state_flag",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": false,
+      "line": 86
+    },
+    "system.h::system_clear_exec_state_flag": {
+      "name": "system_clear_exec_state_flag",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": false,
+      "line": 88
+    },
+    "system.h::system_set_exec_alarm": {
+      "name": "system_set_exec_alarm",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "uint8_t code",
+      "is_definition": false,
+      "line": 89
+    },
+    "system.h::system_clear_exec_alarm": {
+      "name": "system_clear_exec_alarm",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 89
+    },
+    "system.h::system_set_exec_motion_override_flag": {
+      "name": "system_set_exec_motion_override_flag",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "uint8_t mask",
+      "is_definition": false,
+      "line": 90
+    },
+    "system.h::system_clear_exec_motion_overrides": {
+      "name": "system_clear_exec_motion_overrides",
+      "file": "system.h",
+      "return_type": "void",
+      "args": "",
+      "is_definition": false,
+      "line": 90
+    },
+    "tmc_config.c::tmc_update_sgthrs_live": {
+      "name": "tmc_update_sgthrs_live",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "uint8_t axis, uint8_t val",
+      "is_definition": true,
+      "line": 11
+    },
+    "tmc_config.c::tmc_config_init_all": {
+      "name": "tmc_config_init_all",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 18
+    },
+    "tmc_config.c::tmc_enable_steppers": {
+      "name": "tmc_enable_steppers",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 51
+    },
+    "tmc_config.c::tmc_disable_steppers": {
+      "name": "tmc_disable_steppers",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 57
+    },
+    "tmc_config.c::tmc_stallguard_enable": {
+      "name": "tmc_stallguard_enable",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 63
+    },
+    "tmc_config.c::tmc_stallguard_disable": {
+      "name": "tmc_stallguard_disable",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 69
+    },
+    "tmc_config.c::tmc_calibrate_sgthrs": {
+      "name": "tmc_calibrate_sgthrs",
+      "file": "tmc_config.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t driver_addr, uint8_t sensitivity_divisor",
+      "is_definition": true,
+      "line": 72
+    },
+    "tmc_config.c::tmc_config_poll_state": {
+      "name": "tmc_config_poll_state",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 92
+    },
+    "tmc_config.c::read_with_retry": {
+      "name": "read_with_retry",
+      "file": "tmc_config.c",
+      "return_type": "bool",
+      "args": "uint8_t addr, uint8_t reg, uint32_t *val",
+      "is_definition": true,
+      "line": 152
+    },
+    "tmc_config.c::tmc_report_details": {
+      "name": "tmc_report_details",
+      "file": "tmc_config.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 158
+    },
+    "tmc_config.h::tmc_config_init_all": {
+      "name": "tmc_config_init_all",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 13
+    },
+    "tmc_config.h::tmc_enable_steppers": {
+      "name": "tmc_enable_steppers",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 13
+    },
+    "tmc_config.h::tmc_disable_steppers": {
+      "name": "tmc_disable_steppers",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 13
+    },
+    "tmc_config.h::tmc_report_details": {
+      "name": "tmc_report_details",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 15
+    },
+    "tmc_config.h::tmc_calibrate_sgthrs": {
+      "name": "tmc_calibrate_sgthrs",
+      "file": "tmc_config.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t driver_addr, uint8_t sensitivity_divisor",
+      "is_definition": false,
+      "line": 15
+    },
+    "tmc_config.h::tmc_config_poll_state": {
+      "name": "tmc_config_poll_state",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 19
+    },
+    "tmc_config.h::tmc_stallguard_enable": {
+      "name": "tmc_stallguard_enable",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 20
+    },
+    "tmc_config.h::tmc_stallguard_disable": {
+      "name": "tmc_stallguard_disable",
+      "file": "tmc_config.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 21
+    },
+    "tmc_uart.c::tmc_uart_init": {
+      "name": "tmc_uart_init",
+      "file": "tmc_uart.c",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": true,
+      "line": 10
+    },
+    "tmc_uart.c::tmc_uart_tx_byte": {
+      "name": "tmc_uart_tx_byte",
+      "file": "tmc_uart.c",
+      "return_type": "void",
+      "args": "uint8_t data",
+      "is_definition": true,
+      "line": 14
+    },
+    "tmc_uart.c::tmc_uart_rx_byte": {
+      "name": "tmc_uart_rx_byte",
+      "file": "tmc_uart.c",
+      "return_type": "bool",
+      "args": "uint8_t *data_out",
+      "is_definition": true,
+      "line": 27
+    },
+    "tmc_uart.c::tmc_crc8": {
+      "name": "tmc_crc8",
+      "file": "tmc_uart.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t *data, uint8_t length",
+      "is_definition": true,
+      "line": 43
+    },
+    "tmc_uart.c::tmc_uart_write_reg": {
+      "name": "tmc_uart_write_reg",
+      "file": "tmc_uart.c",
+      "return_type": "void",
+      "args": "uint8_t driver_addr, uint8_t reg, uint32_t val",
+      "is_definition": true,
+      "line": 55
+    },
+    "tmc_uart.c::tmc_uart_read_reg": {
+      "name": "tmc_uart_read_reg",
+      "file": "tmc_uart.c",
+      "return_type": "bool",
+      "args": "uint8_t driver_addr, uint8_t reg, uint32_t *data_out",
+      "is_definition": true,
+      "line": 73
+    },
+    "tmc_uart.c::tmc_uart_read_reg_async": {
+      "name": "tmc_uart_read_reg_async",
+      "file": "tmc_uart.c",
+      "return_type": "bool",
+      "args": "uint8_t driver_addr, uint8_t reg,\n                             uint32_t *data_out",
+      "is_definition": true,
+      "line": 106
+    },
+    "tmc_uart.c::tmc_uart_read_raw": {
+      "name": "tmc_uart_read_raw",
+      "file": "tmc_uart.c",
+      "return_type": "uint8_t",
+      "args": "uint8_t driver_addr, uint8_t reg, uint8_t *buf",
+      "is_definition": true,
+      "line": 130
+    },
+    "tmc_uart.h::tmc_uart_init": {
+      "name": "tmc_uart_init",
+      "file": "tmc_uart.h",
+      "return_type": "void",
+      "args": "void",
+      "is_definition": false,
+      "line": 16
+    },
+    "tmc_uart.h::tmc_uart_write_reg": {
+      "name": "tmc_uart_write_reg",
+      "file": "tmc_uart.h",
+      "return_type": "void",
+      "args": "uint8_t driver_addr, uint8_t reg, uint32_t val",
+      "is_definition": false,
+      "line": 17
+    },
+    "tmc_uart.h::tmc_uart_read_reg": {
+      "name": "tmc_uart_read_reg",
+      "file": "tmc_uart.h",
+      "return_type": "bool",
+      "args": "uint8_t driver_addr, uint8_t reg, uint32_t *data_out",
+      "is_definition": false,
+      "line": 20
+    },
+    "tmc_uart.h::tmc_uart_read_reg_async": {
+      "name": "tmc_uart_read_reg_async",
+      "file": "tmc_uart.h",
+      "return_type": "bool",
+      "args": "uint8_t driver_addr, uint8_t reg,\n                             uint32_t *data_out",
+      "is_definition": false,
+      "line": 24
+    },
+    "tmc_uart.h::tmc_crc8": {
+      "name": "tmc_crc8",
+      "file": "tmc_uart.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t *data, uint8_t length",
+      "is_definition": false,
+      "line": 27
+    },
+    "tmc_uart.h::tmc_uart_read_raw": {
+      "name": "tmc_uart_read_raw",
+      "file": "tmc_uart.h",
+      "return_type": "uint8_t",
+      "args": "uint8_t driver_addr, uint8_t reg, uint8_t *buf",
+      "is_definition": false,
+      "line": 29
+    },
+    "examples/grblUpload/grblUpload.ino::setup": {
+      "name": "setup",
+      "file": "examples/grblUpload/grblUpload.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 3
+    },
+    "examples/grblUpload/grblUpload.ino::loop": {
+      "name": "loop",
+      "file": "examples/grblUpload/grblUpload.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 3
+    },
+    "examples/testgrbl/testgrbl.ino::setup": {
+      "name": "setup",
+      "file": "examples/testgrbl/testgrbl.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 2
+    },
+    "examples/testgrbl/testgrbl.ino::loop": {
+      "name": "loop",
+      "file": "examples/testgrbl/testgrbl.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 4
+    },
+    "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::setup": {
+      "name": "setup",
+      "file": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 12
+    },
+    "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino::loop": {
+      "name": "loop",
+      "file": "examples/TMC2209_17HS8401_Test/TMC2209_17HS8401_Test.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 48
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::tmcSerial": {
+      "name": "tmcSerial",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "SoftwareSerial",
+      "args": "UART_RX_PIN, UART_TX_PIN",
+      "is_definition": false,
+      "line": 13
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::setup": {
+      "name": "setup",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 16
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::onStep": {
+      "name": "onStep",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 45
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::calcTmcCrc": {
+      "name": "calcTmcCrc",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "uint8_t",
+      "args": "uint8_t *datagram, uint8_t datagramLength",
+      "is_definition": true,
+      "line": 52
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::loop": {
+      "name": "loop",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "void",
+      "args": "",
+      "is_definition": true,
+      "line": 61
+    },
+    "examples/tmc2209_simulator/tmc2209_simulator.ino::sent": {
+      "name": "sent",
+      "file": "examples/tmc2209_simulator/tmc2209_simulator.ino",
+      "return_type": "Replica",
+      "args": "Data: 0x\"",
+      "is_definition": false,
+      "line": 152
+    }
+  }
+}

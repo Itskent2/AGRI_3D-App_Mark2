@@ -1,6 +1,5 @@
 ---
 trigger: always_on
-glob: "*"
 description: Repository rules and coding guidelines for Agri3D Cartesian Gantry System Mark 2
 ---
 
@@ -45,3 +44,5 @@ To eliminate ghost WebSocket connections, phantom serial commands, and unpredict
 ## 3. Data Integrity & Verification
 *   **CRC16 Checksums**: Every MessagePack payload sent between ESP32 and Flutter must contain a Modbus CRC16 checksum in the header. If the calculated checksum does not match, the packet must be dropped immediately without processing to avoid "ghost" instructions caused by transmission corruption.
 *   **NVS Dimension Checks**: Gantry coordinates received from status polls must be validated against the soft limits cached in NVS. If coordinates exceed limits, trigger an immediate emergency halt.
+
+## 4. READ THE MASTERPLAN ALWAYS
